@@ -1,9 +1,9 @@
 require 'test_helper'
 
-TEST_API_TOKEN = 'c39d97f0ff14af5824b85c660e9cb86e59a6156c3209a491ace867477e9252e6'
-SITE_ID = '58c996aa4e6fd9182228b630'
-COLLECTION_ID = '58c996f626822cec4614519d'
-DOMAIN = 'rubys-first-project.webflow.io'
+TEST_API_TOKEN = '1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be'
+SITE_ID = '58c9a534b6b690592691fe96'
+COLLECTION_ID = '58c9a554a118f71a388bcc89'
+DOMAIN = 'webflow-ruby-test-site.webflow.io'
 
 class WebflowTest < Minitest::Test
   def test_it_fetches_sites
