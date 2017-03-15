@@ -26,17 +26,13 @@ module Webflow
       get("/sites/#{site_id}/domains")
     end
 
-    def publish(site_id)
-      names = domains.map { |domain| domain['name'] }
-      post("/sites/#{site_id}/publish", domains: names)
+    def publish(site_id, domain_names: nil)
+      domain_names ||= domains(site_id).map { |domain| domain['name'] }
+      post("/sites/#{site_id}/publish", domains: domain_names)
     end
 
     def collections(site_id)
       get("/sites/#{site_id}/collections")
-    end
-
-    def collection_by(key, value)
-      collections.find { |c| c[key.to_s] == value }
     end
 
     def items(collection_id, limit: 100)
@@ -49,6 +45,7 @@ module Webflow
     end
 
     def update_item(collection_id, item, data)
+      # FIXME: (PS) looks like the API does not have partial updates...
       base = item.reject {|key, _| ['_id', 'published-by', 'published-on', 'created-on', 'created-by', 'updated-by', 'updated-on', '_cid'].include?(key) }
       put("/collections/#{collection_id}/items/#{item['_id']}", fields: base.merge(data))
     end
@@ -60,30 +57,23 @@ module Webflow
     private
 
     def get(path, params: nil)
-      url = File.join(HOST, path)
-      response = http(url, method: :get, headers: headers, params: params)
-      Oj.load(response)
+      http(path, method: :get, headers: headers, params: params)
     end
 
     def post(path, data)
-      url = File.join(HOST, path)
-      response = http(url, method: :post, headers: headers, body: data)
-      Oj.load(response)
+      http(path, method: :post, headers: headers, body: data)
     end
 
     def put(path, data)
-      url = File.join(HOST, path)
-      response = http(url, method: :put, headers: headers, body: data)
-      Oj.load(response)
+      http(path, method: :put, headers: headers, body: data)
     end
 
     def delete(path)
-      url = File.join(HOST, path)
-      response = http(url, method: :delete, headers: headers)
-      Oj.load(response)
+      http(path, method: :delete, headers: headers)
     end
 
-    def http(url, method: :get, params: nil, headers: nil, body: nil)
+    def http(path, method: :get, params: nil, headers: nil, body: nil)
+      url = File.join(HOST, path)
       request = Typhoeus::Request.new(
         url,
         method: method,
@@ -91,7 +81,8 @@ module Webflow
         headers: headers,
         body: (Oj.dump(body) if body),
       )
-      request.run.body
+      body = request.run.body
+      Oj.load(body)
     end
 
     def headers
