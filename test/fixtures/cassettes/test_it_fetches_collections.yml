@@ -25,17 +25,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 16:58:04 GMT
+      - Thu, 16 Mar 2017 19:38:51 GMT
       Etag:
       - W/"b1-da95a5a7"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '58'
+      - '44'
       X-Response-Time:
-      - 33.641ms
+      - 28.008ms
       X-Wf-Rid:
-      - 4e812b61-03d4-4294-bbe0-fb99133452d6
+      - 1d607924-6ed5-4059-b200-bee367268c7a
       Content-Length:
       - '177'
       Connection:
@@ -45,5 +45,5 @@ http_interactions:
       string: '[{"_id":"58c9a554a118f71a388bcc89","lastUpdated":"2017-03-15T20:34:28.136Z","createdOn":"2017-03-15T20:34:28.120Z","name":"Blog
         Posts","slug":"post","singularName":"Blog Post"}]'
     http_version: 
-  recorded_at: Thu, 16 Mar 2017 16:58:04 GMT
+  recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
 recorded_with: VCR 3.0.3

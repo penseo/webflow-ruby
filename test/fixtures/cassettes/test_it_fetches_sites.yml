@@ -25,17 +25,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 16:54:46 GMT
+      - Thu, 16 Mar 2017 19:38:51 GMT
       Etag:
-      - W/"14c-bcb3bd69"
+      - W/"14c-82747446"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '60'
+      - '43'
       X-Response-Time:
-      - 42.163ms
+      - 43.681ms
       X-Wf-Rid:
-      - 48fce06d-6108-4f35-9847-e3cc814863b5
+      - 4a27a322-3f49-4198-905e-a3af74cdceee
       Content-Length:
       - '332'
       Connection:
@@ -43,7 +43,7 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '[{"_id":"58c9a534b6b690592691fe96","createdOn":"2017-03-15T20:33:56.416Z","name":"Test
-        Site","shortName":"webflow-ruby-test-site","lastPublished":"2017-03-16T15:29:47.356Z","previewUrl":"https://daks2k3a4ib2z.cloudfront.net/58c9a534b6b690592691fe96/201703161529.png","timezone":"Europe/Paris","database":"58c9a553369191207daa2f22"}]'
+        Site","shortName":"webflow-ruby-test-site","lastPublished":"2017-03-16T19:38:07.810Z","previewUrl":"https://daks2k3a4ib2z.cloudfront.net/58c9a534b6b690592691fe96/201703161936.png","timezone":"Europe/Paris","database":"58c9a553369191207daa2f22"}]'
     http_version: 
-  recorded_at: Thu, 16 Mar 2017 16:54:46 GMT
+  recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
 recorded_with: VCR 3.0.3

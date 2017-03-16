@@ -26,29 +26,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 16:58:44 GMT
+      - Thu, 16 Mar 2017 19:38:52 GMT
       Etag:
-      - W/"173-4a1c895d"
+      - W/"173-cc9d58e8"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '55'
+      - '39'
       X-Response-Time:
-      - 79.830ms
+      - 54.942ms
       X-Wf-Rid:
-      - 243de758-d59d-4e9e-b81f-d0157eb268e4
+      - 8dc8f8d1-6ed9-4e06-997e-699dc9a8a3fe
       Content-Length:
       - '371'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC","slug":"test-item-name-abc","updated-on":"2017-03-16T16:58:44.819Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T16:58:44.819Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cac44402523c88492bf09b"}'
+      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC","slug":"test-item-name-abc","updated-on":"2017-03-16T19:38:52.072Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T19:38:52.072Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cae9cc02523c88492bf246"}'
     http_version: 
-  recorded_at: Thu, 16 Mar 2017 16:58:44 GMT
+  recorded_at: Thu, 16 Mar 2017 19:38:52 GMT
 - request:
     method: put
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/58cac44402523c88492bf09b
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/58cae9cc02523c88492bf246
     body:
       encoding: UTF-8
       string: '{"fields":{"_archived":false,"_draft":false,"name":"Test Item Name
@@ -72,24 +72,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 16:58:44 GMT
+      - Thu, 16 Mar 2017 19:38:52 GMT
       Etag:
-      - W/"17a-e528078a"
+      - W/"17a-fb66147"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '54'
+      - '38'
       X-Response-Time:
-      - 30.500ms
+      - 39.066ms
       X-Wf-Rid:
-      - f1650fba-e4d8-46e0-8e4a-4d9be7677cf6
+      - 2fe58a4f-2d69-4b0e-8197-71925cf781a1
       Content-Length:
       - '378'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name Update DEF","slug":"test-item-name-abc","updated-on":"2017-03-16T16:58:44.991Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T16:58:44.819Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cac44402523c88492bf09b"}'
+      string: '{"_archived":false,"_draft":false,"name":"Test Item Name Update DEF","slug":"test-item-name-abc","updated-on":"2017-03-16T19:38:52.217Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T19:38:52.072Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cae9cc02523c88492bf246"}'
     http_version: 
-  recorded_at: Thu, 16 Mar 2017 16:58:44 GMT
+  recorded_at: Thu, 16 Mar 2017 19:38:52 GMT
 recorded_with: VCR 3.0.3

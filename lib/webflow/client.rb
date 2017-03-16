@@ -5,9 +5,19 @@ require 'oj'
 module Webflow
   class Client
     HOST = 'https://api.webflow.com'
+    OJ_OPTIONS = {mode: :strict, nilnil: true}
 
     def initialize(token)
       @token = token
+      @rate_limit = {}
+    end
+
+    def rate_limit
+      @rate_limit
+    end
+
+    def info
+      get("/info")
     end
 
     def info
@@ -57,19 +67,25 @@ module Webflow
     private
 
     def get(path, params: nil)
-      http(path, method: :get, headers: headers, params: params)
+      request(path, method: :get, params: params)
     end
 
     def post(path, data)
-      http(path, method: :post, headers: headers, body: data)
+      request(path, method: :post, body: data)
     end
 
     def put(path, data)
-      http(path, method: :put, headers: headers, body: data)
+      request(path, method: :put, body: data)
     end
 
     def delete(path)
-      http(path, method: :delete, headers: headers)
+      request(path, method: :delete)
+    end
+
+    def request(path, method: :get, params: nil, body: nil)
+      body = Oj.dump(body, OJ_OPTIONS) if body
+      json = http(path, method: method, params: params, headers: request_headers, body: body)
+      Oj.load(json, OJ_OPTIONS)
     end
 
     def http(path, method: :get, params: nil, headers: nil, body: nil)
@@ -79,17 +95,43 @@ module Webflow
         method: method,
         params: params,
         headers: headers,
-        body: (Oj.dump(body) if body),
+        body: body,
       )
-      body = request.run.body
-      Oj.load(body)
+      response = request.run
+
+      track_rate_limit(response.headers)
+
+      response.body
     end
 
-    def headers
+    def track_rate_limit(headers)
+      rate_limit = headers.select { |key, value| key =~ /X-Ratelimit/ }
+      @rate_limit = rate_limit unless rate_limit.empty?
+      # byebug
+    end
+
+    def request_headers
       {
         'Authorization' => "Bearer #{@token}",
         'Content-Type' => 'application/json',
-        'accept-version' => '1.0.0',
+        'Accept-Version' => '1.0.0',
+      }
+    end
+
+    def error_codes
+      # https://developers.webflow.com/#errors
+      {
+        [400,	SyntaxError] =>	'Request body was incorrectly formatted. Likely invalid JSON being sent up.',
+        [400,	InvalidAPIVersion] =>	'Requested an invalid API version',
+        [400,	UnsupportedVersion] =>	'Requested an API version that in unsupported by the requested route',
+        [400,	NotImplemented] =>	'This feature is not currently implemented',
+        [400,	ValidationError] =>	'Validation failure (see problems field in the response)',
+        [400,	Conflict] =>	'Request has a conflict with existing data.',
+        [401,	Unauthorized] =>	'Provided access token is invalid or does not have access to requested resource',
+        [404,	NotFound] =>	'Requested resource not found',
+        [429,	RateLimit] =>	'The rate limit of the provided access_token has been reached. Please have your application respect the X-RateLimit-Remaining header we include on API responses.',
+        [500,	ServerError] =>	'We had a problem with our server. Try again later.',
+        [400,	UnknownError] =>	'An error occurred which is not enumerated here, but is not a server error.',
       }
     end
   end

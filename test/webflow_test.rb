@@ -51,6 +51,18 @@ class WebflowTest < Minitest::Test
     end
   end
 
+  def test_it_tracks_rate_limits
+    VCR.use_cassette('test_it_tracks_rate_limits') do
+      client.collections(SITE_ID)
+      limit = {"X-Ratelimit-Limit"=>"60", "X-Ratelimit-Remaining"=>"41"}
+      assert_equal(limit, client.rate_limit)
+
+      client.collections(SITE_ID)
+      limit = {"X-Ratelimit-Limit"=>"60", "X-Ratelimit-Remaining"=>"40"}
+      assert_equal(limit, client.rate_limit)
+    end
+  end
+
   def client
     @client ||= Webflow::Client.new(TEST_API_TOKEN)
   end

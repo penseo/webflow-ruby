@@ -25,17 +25,17 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 16:58:04 GMT
+      - Thu, 16 Mar 2017 19:38:51 GMT
       Etag:
       - W/"37-245d0dcb"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '59'
+      - '40'
       X-Response-Time:
-      - 47.039ms
+      - 45.608ms
       X-Wf-Rid:
-      - 6e6c1201-195d-49fd-818f-4175a385669e
+      - b43f04d7-5ef9-4139-a236-ff4af1fac5c1
       Content-Length:
       - '55'
       Connection:
@@ -44,5 +44,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"items":[],"count":0,"limit":100,"offset":0,"total":0}'
     http_version: 
-  recorded_at: Thu, 16 Mar 2017 16:58:04 GMT
+  recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
 recorded_with: VCR 3.0.3
