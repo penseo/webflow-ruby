@@ -26,7 +26,7 @@ class WebflowTest < Minitest::Test
 
   def test_it_creates_and_updates_items
     VCR.use_cassette('test_it_creates_and_updates_items') do
-      name = "Test Item Name ABC"
+      name = 'Test Item Name ABC'
       data = {
         _archived:  false,
         _draft:     false,
@@ -35,9 +35,22 @@ class WebflowTest < Minitest::Test
       item = client.create_item(COLLECTION_ID, data)
       assert_equal(name, item['name'])
 
-      name = "Test Item Name Update DEF"
+      name = 'Test Item Name Update DEF'
       item = client.update_item(item, name: name)
       assert_equal(name, item['name'])
+    end
+  end
+
+  def test_handles_errors_gracefully
+    VCR.use_cassette('test_handles_errors_gracefully') do
+      data = {
+        _archived:  false,
+        _draft:     false,
+        unknown:    'this raises an error',
+      }
+      response = client.create_item(COLLECTION_ID, data)
+      error = {"msg"=>"'fields.name' is required", "code"=>400, "name"=>"ValidationError", "path"=>"/collections/58c9a554a118f71a388bcc89/items", "err"=>"ValidationError: 'fields.name' is required"}
+      assert_equal(error, response)
     end
   end
 
