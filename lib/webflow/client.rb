@@ -1,5 +1,4 @@
 require 'typhoeus'
-require 'nokogiri'
 require 'oj'
 
 module Webflow
