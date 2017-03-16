@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"_archived":false,"_draft":false,"name":"Test Item Name
+        ABC"}}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 16 Mar 2017 16:58:44 GMT
+      Etag:
+      - W/"173-4a1c895d"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '55'
+      X-Response-Time:
+      - 79.830ms
+      X-Wf-Rid:
+      - 243de758-d59d-4e9e-b81f-d0157eb268e4
+      Content-Length:
+      - '371'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC","slug":"test-item-name-abc","updated-on":"2017-03-16T16:58:44.819Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T16:58:44.819Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cac44402523c88492bf09b"}'
+    http_version: 
+  recorded_at: Thu, 16 Mar 2017 16:58:44 GMT
+- request:
+    method: put
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/58cac44402523c88492bf09b
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"_archived":false,"_draft":false,"name":"Test Item Name
+        ABC","slug":"test-item-name-abc","name":"Test Item Name Update DEF"}}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 16 Mar 2017 16:58:44 GMT
+      Etag:
+      - W/"17a-e528078a"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '54'
+      X-Response-Time:
+      - 30.500ms
+      X-Wf-Rid:
+      - f1650fba-e4d8-46e0-8e4a-4d9be7677cf6
+      Content-Length:
+      - '378'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_archived":false,"_draft":false,"name":"Test Item Name Update DEF","slug":"test-item-name-abc","updated-on":"2017-03-16T16:58:44.991Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T16:58:44.819Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cac44402523c88492bf09b"}'
+    http_version: 
+  recorded_at: Thu, 16 Mar 2017 16:58:44 GMT
+recorded_with: VCR 3.0.3

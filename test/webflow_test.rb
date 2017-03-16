@@ -7,37 +7,47 @@ DOMAIN = 'webflow-ruby-test-site.webflow.io'
 
 class WebflowTest < Minitest::Test
   def test_it_fetches_sites
-    assert_equal(SITE_ID, client.sites.first['_id'])
+    VCR.use_cassette('test_it_fetches_sites') do
+      assert_equal(SITE_ID, client.sites.first['_id'])
+    end
   end
 
   def test_it_publishes_sites
-    assert_equal({"queued"=>true}, client.publish(SITE_ID, domain_names: [DOMAIN]))
+    VCR.use_cassette('test_it_publishes_sites') do
+      assert_equal({"queued"=>true}, client.publish(SITE_ID, domain_names: [DOMAIN]))
+    end
   end
 
   def test_it_fetches_collections
-    assert_equal COLLECTION_ID, client.collections(SITE_ID).first['_id']
+    VCR.use_cassette('test_it_fetches_collections') do
+      assert_equal COLLECTION_ID, client.collections(SITE_ID).first['_id']
+    end
   end
 
   def test_it_creates_and_updates_items
-    name = "Test Item Name #{Time.now}"
-    data = {
-      _archived:  false,
-      _draft:     false,
-      name:       name,
-    }
-    item = client.create_item(COLLECTION_ID, data)
-    assert_equal(name, item['name'])
+    VCR.use_cassette('test_it_creates_and_updates_items') do
+      name = "Test Item Name ABC"
+      data = {
+        _archived:  false,
+        _draft:     false,
+        name:       name,
+      }
+      item = client.create_item(COLLECTION_ID, data)
+      assert_equal(name, item['name'])
 
-    name = "Test Item Name Update #{Time.now}"
-    item = client.update_item(item, name: name)
-    assert_equal(name, item['name'])
+      name = "Test Item Name Update DEF"
+      item = client.update_item(item, name: name)
+      assert_equal(name, item['name'])
+    end
   end
 
   def test_it_lists_and_deletes_items
-    items = client.items(COLLECTION_ID)
-    items.each do |item|
-      result = client.delete_item(item)
-      assert_equal({"deleted"=>1}, result)
+    VCR.use_cassette('test_it_lists_and_deletes_items') do
+      items = client.items(COLLECTION_ID)
+      items.each do |item|
+        result = client.delete_item(item)
+        assert_equal({"deleted"=>1}, result)
+      end
     end
   end
 

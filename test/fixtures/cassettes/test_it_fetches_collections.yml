@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.webflow.com/sites/58c9a534b6b690592691fe96/collections
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 16 Mar 2017 16:58:04 GMT
+      Etag:
+      - W/"b1-da95a5a7"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Response-Time:
+      - 33.641ms
+      X-Wf-Rid:
+      - 4e812b61-03d4-4294-bbe0-fb99133452d6
+      Content-Length:
+      - '177'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"58c9a554a118f71a388bcc89","lastUpdated":"2017-03-15T20:34:28.136Z","createdOn":"2017-03-15T20:34:28.120Z","name":"Blog
+        Posts","slug":"post","singularName":"Blog Post"}]'
+    http_version: 
+  recorded_at: Thu, 16 Mar 2017 16:58:04 GMT
+recorded_with: VCR 3.0.3

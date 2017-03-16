@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.webflow.com/sites
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 16 Mar 2017 16:54:46 GMT
+      Etag:
+      - W/"14c-bcb3bd69"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '60'
+      X-Response-Time:
+      - 42.163ms
+      X-Wf-Rid:
+      - 48fce06d-6108-4f35-9847-e3cc814863b5
+      Content-Length:
+      - '332'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"58c9a534b6b690592691fe96","createdOn":"2017-03-15T20:33:56.416Z","name":"Test
+        Site","shortName":"webflow-ruby-test-site","lastPublished":"2017-03-16T15:29:47.356Z","previewUrl":"https://daks2k3a4ib2z.cloudfront.net/58c9a534b6b690592691fe96/201703161529.png","timezone":"Europe/Paris","database":"58c9a553369191207daa2f22"}]'
+    http_version: 
+  recorded_at: Thu, 16 Mar 2017 16:54:46 GMT
+recorded_with: VCR 3.0.3
