@@ -29,14 +29,14 @@ class WebflowTest < Minitest::Test
     assert_equal(name, item['name'])
 
     name = "Test Item Name Update #{Time.now}"
-    item = client.update_item(COLLECTION_ID, item, name: name)
+    item = client.update_item(item, name: name)
     assert_equal(name, item['name'])
   end
 
   def test_it_lists_and_deletes_items
     items = client.items(COLLECTION_ID)
     items.each do |item|
-      result = client.delete_item(COLLECTION_ID, item['_id'])
+      result = client.delete_item(item)
       assert_equal({"deleted"=>1}, result)
     end
   end
