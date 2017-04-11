@@ -1,0 +1,109 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.webflow.com/sites/58c9a534b6b690592691fe96/collections
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 11 Apr 2017 14:36:01 GMT
+      Etag:
+      - W/"b1-da95a5a7"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '60'
+      X-Response-Time:
+      - 48.237ms
+      X-Wf-Rid:
+      - a2b472fd-d2a8-4767-9f1c-d63e3bcd9d5e
+      Content-Length:
+      - '177'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"_id":"58c9a554a118f71a388bcc89","lastUpdated":"2017-03-15T20:34:28.136Z","createdOn":"2017-03-15T20:34:28.120Z","name":"Blog
+        Posts","slug":"post","singularName":"Blog Post"}]'
+    http_version: 
+  recorded_at: Tue, 11 Apr 2017 14:35:56 GMT
+- request:
+    method: get
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 11 Apr 2017 14:41:10 GMT
+      Etag:
+      - W/"swWX/9bljGNPMLdtRT1Eog=="
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '60'
+      X-Response-Time:
+      - 23.605ms
+      X-Wf-Rid:
+      - 0ecabdc9-5bf5-41fc-af44-0f623ca459b2
+      Content-Length:
+      - '2698'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_id":"58c9a554a118f71a388bcc89","lastUpdated":"2017-03-15T20:34:28.136Z","createdOn":"2017-03-15T20:34:28.120Z","name":"Blog
+        Posts","slug":"post","singularName":"Blog Post","fields":[{"id":"5d91c55d1cf90b0b669e434115eb0ec8","editable":true,"required":false,"type":"RichText","slug":"post-body","name":"Post
+        Body"},{"validations":{"singleLine":false},"id":"8bf53af33d1dad80e3f8fcfd8da2b0be","helpText":"A
+        summary of the blog post that appears on blog post grid","editable":true,"required":false,"type":"PlainText","slug":"post-summary","name":"Post
+        Summary"},{"id":"0ec11335663ab972b9679200e9b3d169","editable":true,"required":false,"type":"ImageRef","slug":"main-image","name":"Main
+        Image"},{"id":"9b12afe78b4ec83d4ed23841884a298e","helpText":"Smaller version
+        of main image that is used on blog post grid","editable":true,"required":false,"type":"ImageRef","slug":"thumbnail-image","name":"Thumbnail
+        image"},{"id":"9a3de588748751a5ab41f3b7232d730c","editable":true,"required":false,"type":"Bool","slug":"featured","name":"Featured?"},{"id":"b2780475ff86839f9e9a589e3ee9a7c7","editable":true,"required":false,"type":"Color","slug":"color","name":"Color"},{"validations":{"maxLength":256},"id":"ea73b2b412e99fc54c0ab512948d6091","editable":true,"required":true,"type":"PlainText","slug":"name","name":"Name"},{"validations":{"messages":{"maxLength":"Must
+        be less than 256 characters","pattern":"Must be alphanumerical and not contain
+        any spaces or special characters"},"pattern":{},"maxLength":256},"id":"85e7ad30032fe5ef591426bbf9608ea5","unique":true,"editable":true,"required":true,"type":"PlainText","slug":"slug","name":"Slug"},{"default":false,"id":"05664912d168da21c876b64bf7a7b57f","editable":true,"required":true,"type":"Bool","slug":"_archived","name":"Archived"},{"default":false,"id":"4ef78b3f6bbb3a31820a41fead6c832d","editable":true,"required":true,"type":"Bool","slug":"_draft","name":"Draft"},{"id":"6cc6b9ae64759a93c1f04e2180ee4777","editable":false,"required":false,"type":"Date","slug":"created-on","name":"Created
+        On"},{"id":"b84c55380174042f8ae954951401c98d","editable":false,"required":false,"type":"Date","slug":"updated-on","name":"Updated
+        On"},{"id":"9372d19e9aa8201211286cff7b5cd185","editable":false,"required":false,"type":"Date","slug":"published-on","name":"Published
+        On"},{"id":"1e2bc0ddebbb7b4235d4afcc8583cbf5","editable":false,"required":false,"type":"User","slug":"created-by","name":"Created
+        By"},{"id":"efd7156826bc17ddc4acbb995cfc6caf","editable":false,"required":false,"type":"User","slug":"updated-by","name":"Updated
+        By"},{"id":"b12147b67595264ae97deac30ff19541","editable":false,"required":false,"type":"User","slug":"published-by","name":"Published
+        By"}]}'
+    http_version: 
+  recorded_at: Tue, 11 Apr 2017 14:41:05 GMT
+recorded_with: VCR 3.0.3

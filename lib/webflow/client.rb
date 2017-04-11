@@ -44,9 +44,18 @@ module Webflow
       get("/sites/#{site_id}/collections")
     end
 
+    def collection(collection_id)
+      get("/collections/#{collection_id}")
+    end
+
     def items(collection_id, limit: 100)
       json = get("/collections/#{collection_id}/items", params: {limit: limit})
       json['items']
+    end
+
+    def item(collection_id, item_id)
+      json = get("/collections/#{collection_id}/items/#{item_id}")
+      json['items'].first
     end
 
     def create_item(collection_id, data)
