@@ -24,6 +24,12 @@ class WebflowTest < Minitest::Test
     end
   end
 
+  def test_it_fetches_a_single_collection
+    VCR.use_cassette('test_it_fetches_single_collection') do
+      assert_equal COLLECTION_ID, client.collection(COLLECTION_ID)['_id']
+    end
+  end
+
   def test_it_creates_and_updates_items
     VCR.use_cassette('test_it_creates_and_updates_items') do
       name = 'Test Item Name ABC'
@@ -38,6 +44,13 @@ class WebflowTest < Minitest::Test
       name = 'Test Item Name Update DEF'
       item = client.update_item(item, name: name)
       assert_equal(name, item['name'])
+    end
+  end
+
+  def test_it_fetches_a_single_item
+    VCR.use_cassette('test_it_fetches_a_single_item') do
+      item = client.items(COLLECTION_ID).first
+      assert_equal item['_id'], client.item(COLLECTION_ID, item['_id'])['_id']
     end
   end
 
