@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Webflow API bindings for Ruby}
   spec.description   = spec.summary
-  spec.homepage      = "https://github.com/phoet/webflow-ruby"
+  spec.homepage      = "https://github.com/penseo/webflow-ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
