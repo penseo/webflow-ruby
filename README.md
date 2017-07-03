@@ -1,4 +1,4 @@
-# Webflow [![Build Status](https://travis-ci.org/phoet/webflow-ruby.svg?branch=master)](https://travis-ci.org/phoet/webflow-ruby)
+# Webflow [![Build Status](https://travis-ci.org/penseo/webflow-ruby.svg?branch=master)](https://travis-ci.org/penseo/webflow-ruby)
 
 ## Installation
 
@@ -28,7 +28,7 @@ Have a look at the tests, seriously!
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/phoet/webflow-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/penseo/webflow-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
