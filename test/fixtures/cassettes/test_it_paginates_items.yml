@@ -1,0 +1,322 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"name":"Test 1","_archived":false,"_draft":false}}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 15 Jan 2019 22:32:20 GMT
+      Etag:
+      - W/"15b-c83b0550"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '60'
+      X-Response-Time:
+      - 41.820ms
+      X-Wf-Rid:
+      - bd338e42-a666-4189-b9ef-d4e1074e0b09
+      Content-Length:
+      - '347'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_archived":false,"_draft":false,"name":"Test 1","slug":"test-1","updated-on":"2019-01-15T22:32:20.637Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:20.637Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f74809ca711be32a4cb"}'
+    http_version: 
+  recorded_at: Tue, 15 Jan 2019 22:32:20 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"name":"Test 2","_archived":false,"_draft":false}}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 15 Jan 2019 22:32:20 GMT
+      Etag:
+      - W/"15b-2ab3d3bd"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 61.767ms
+      X-Wf-Rid:
+      - c7fb78f2-e317-48a3-9cc5-cfc3252fa790
+      Content-Length:
+      - '347'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_archived":false,"_draft":false,"name":"Test 2","slug":"test-2","updated-on":"2019-01-15T22:32:20.712Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:20.712Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f741effa70c063e7473"}'
+    http_version: 
+  recorded_at: Tue, 15 Jan 2019 22:32:20 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"name":"Test 3","_archived":false,"_draft":false}}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 15 Jan 2019 22:32:21 GMT
+      Etag:
+      - W/"15b-c5b07c7d"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Response-Time:
+      - 51.095ms
+      X-Wf-Rid:
+      - 8071ff63-0b0f-441d-b2b7-1a153adaf4ff
+      Content-Length:
+      - '347'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_archived":false,"_draft":false,"name":"Test 3","slug":"test-3","updated-on":"2019-01-15T22:32:20.998Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:20.998Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f74809ca7376732a4cd"}'
+    http_version: 
+  recorded_at: Tue, 15 Jan 2019 22:32:21 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"name":"Test 4","_archived":false,"_draft":false}}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 15 Jan 2019 22:32:21 GMT
+      Etag:
+      - W/"15b-c25fed3c"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '57'
+      X-Response-Time:
+      - 27.129ms
+      X-Wf-Rid:
+      - 9a341060-b13c-4227-8cb9-d023728bcd2b
+      Content-Length:
+      - '347'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"_archived":false,"_draft":false,"name":"Test 4","slug":"test-4","updated-on":"2019-01-15T22:32:21.136Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:21.136Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f7584421b35aece341a"}'
+    http_version: 
+  recorded_at: Tue, 15 Jan 2019 22:32:21 GMT
+- request:
+    method: get
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items?limit=2&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 15 Jan 2019 22:36:04 GMT
+      Etag:
+      - W/"2ec-8187a3cf"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '60'
+      X-Response-Time:
+      - 15.584ms
+      X-Wf-Rid:
+      - 40fd72f9-a946-4ab3-afa5-3ea33baf3a92
+      Content-Length:
+      - '748'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"_archived":false,"_draft":false,"name":"Test 4","slug":"test-4","updated-on":"2019-01-15T22:32:21.136Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:21.136Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f7584421b35aece341a"},{"_archived":false,"_draft":false,"name":"Test
+        3","slug":"test-3","updated-on":"2019-01-15T22:32:20.998Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:20.998Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f74809ca7376732a4cd"}],"count":2,"limit":2,"offset":0,"total":5}'
+    http_version: 
+  recorded_at: Tue, 15 Jan 2019 22:36:04 GMT
+- request:
+    method: get
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items?limit=2&offset=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 15 Jan 2019 22:36:04 GMT
+      Etag:
+      - W/"2ec-bb06342a"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 12.933ms
+      X-Wf-Rid:
+      - 21f85781-f21c-4c0d-b2de-e2e3159ae989
+      Content-Length:
+      - '748'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"_archived":false,"_draft":false,"name":"Test 2","slug":"test-2","updated-on":"2019-01-15T22:32:20.712Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:20.712Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f741effa70c063e7473"},{"_archived":false,"_draft":false,"name":"Test
+        1","slug":"test-1","updated-on":"2019-01-15T22:32:20.637Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:20.637Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f74809ca711be32a4cb"}],"count":2,"limit":2,"offset":2,"total":5}'
+    http_version: 
+  recorded_at: Tue, 15 Jan 2019 22:36:04 GMT
+- request:
+    method: get
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items?limit=3&offset=0
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 15 Jan 2019 22:39:46 GMT
+      Etag:
+      - W/"ATtZSocr06GV61fgrC9ncA=="
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '60'
+      X-Response-Time:
+      - 15.170ms
+      X-Wf-Rid:
+      - 1a1ef3a2-4453-4636-bcec-687633f9ece1
+      Content-Length:
+      - '1096'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"_archived":false,"_draft":false,"name":"Test 4","slug":"test-4","updated-on":"2019-01-15T22:32:21.136Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:21.136Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f7584421b35aece341a"},{"_archived":false,"_draft":false,"name":"Test
+        3","slug":"test-3","updated-on":"2019-01-15T22:32:20.998Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:20.998Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f74809ca7376732a4cd"},{"_archived":false,"_draft":false,"name":"Test
+        2","slug":"test-2","updated-on":"2019-01-15T22:32:20.712Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:32:20.712Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5f741effa70c063e7473"}],"count":3,"limit":3,"offset":0,"total":5}'
+    http_version: 
+  recorded_at: Tue, 15 Jan 2019 22:39:46 GMT
+recorded_with: VCR 4.0.0

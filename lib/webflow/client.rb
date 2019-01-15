@@ -48,9 +48,37 @@ module Webflow
       get("/collections/#{collection_id}")
     end
 
+
+    # https://developers.webflow.com/?javascript#get-all-items-for-a-collection
+    # returns json object with data to help paginate collection
+    #
+    # {
+    #   items:  your list of items returned,
+    #   count:  number of items returned,
+    #   limit:  the limit specified in the request (default: 100),
+    #   offset: the offset specified for pagination (default: 0),
+    #   total:  total # of items in the collection
+    # }
+    #
+    # page starts at 1
+    def paginate_items(collection_id, per_page: 100, page: 1)
+      get("/collections/#{collection_id}/items", params: { limit: per_page, offset: per_page * (page - 1) })
+    end
+
+
     def items(collection_id, limit: 100)
-      json = get("/collections/#{collection_id}/items", params: {limit: limit})
-      json['items']
+      fetched_items = []
+      num_pages     = (limit.to_f / 100.0).ceil
+      per_page      = limit > 100 ? 100 : limit
+
+      num_pages.times do |i|
+        resp = paginate_items(collection_id, per_page: (limit > 100 ? 100 : limit), page: i+1)
+        fetched_items += resp['items']
+        limit -= resp['count']
+        break if limit <= 0 || resp['total'] <= fetched_items.length
+      end
+
+      fetched_items
     end
 
     def item(collection_id, item_id)

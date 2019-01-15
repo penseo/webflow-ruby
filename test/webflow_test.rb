@@ -49,7 +49,12 @@ class WebflowTest < Minitest::Test
 
   def test_it_fetches_a_single_item
     VCR.use_cassette('test_it_fetches_a_single_item') do
-      item = client.items(COLLECTION_ID).first
+      data = {
+        _archived:  false,
+        _draft:     false,
+        name:       'Test Item Name ABC',
+      }
+      item = client.create_item(COLLECTION_ID, data)
       assert_equal item['_id'], client.item(COLLECTION_ID, item['_id'])['_id']
     end
   end
@@ -67,6 +72,23 @@ class WebflowTest < Minitest::Test
     end
   end
 
+
+  def test_it_paginates_items
+    VCR.use_cassette('test_it_paginates_items') do
+      names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
+      names.each do |name|
+        client.create_item(COLLECTION_ID, { name: name, _archived: false, _draft: false })
+      end
+
+
+      page_one = client.paginate_items(COLLECTION_ID, per_page: 2, page: 1)
+      assert_equal(page_one['count'], 2)
+      page_two = client.paginate_items(COLLECTION_ID, per_page: 2, page: 2)
+      assert_equal(page_two['count'], 2)
+      assert_equal((page_one['items'] == page_two['items']), false)
+    end
+  end
+
   def test_it_lists_and_deletes_items
     VCR.use_cassette('test_it_lists_and_deletes_items') do
       items = client.items(COLLECTION_ID)
@@ -74,6 +96,19 @@ class WebflowTest < Minitest::Test
         result = client.delete_item(item)
         assert_equal({"deleted"=>1}, result)
       end
+    end
+  end
+
+  def test_it_respects_items_limit
+    VCR.use_cassette('test_it_paginates_items') do
+      names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
+      names.each do |name|
+        client.create_item(COLLECTION_ID, { name: name, _archived: false, _draft: false })
+      end
+
+      limit = 3
+      items = client.items(COLLECTION_ID, limit: limit)
+      assert_equal(items.length, limit)
     end
   end
 
