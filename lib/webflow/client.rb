@@ -19,10 +19,6 @@ module Webflow
       get("/info")
     end
 
-    def info
-      get("/info")
-    end
-
     def sites
       get("/sites")
     end
@@ -72,7 +68,7 @@ module Webflow
       per_page      = limit > 100 ? 100 : limit
 
       num_pages.times do |i|
-        resp = paginate_items(collection_id, per_page: (limit > 100 ? 100 : limit), page: i+1)
+        resp = paginate_items(collection_id, per_page: per_page, page: i+1)
         fetched_items += resp['items']
         limit -= resp['count']
         break if limit <= 0 || resp['total'] <= fetched_items.length
