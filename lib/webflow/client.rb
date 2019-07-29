@@ -1,10 +1,8 @@
-require 'typhoeus'
-require 'oj'
+require 'http'
 
 module Webflow
   class Client
     HOST = 'https://api.webflow.com'
-    OJ_OPTIONS = {mode: :strict, nilnil: true}
 
     def initialize(token)
       @token = token
@@ -115,38 +113,19 @@ module Webflow
     end
 
     def request(path, method: :get, params: nil, data: nil)
-      json = Oj.dump(data, OJ_OPTIONS) if data
+      url = URI.join(HOST, path)
+      bearer = "Bearer #{@token}"
+      headers = {'Accept-Version' => '1.0.0'}
 
-      response = http(path, method: method, params: params, headers: request_headers, body: json)
-      track_rate_limit(response.headers)
+      response = HTTP.auth(bearer).headers(headers).request(method, url, params: params, json: data)
 
-      Oj.load(response.body, OJ_OPTIONS)
-    end
+      rate_limit = response.headers.select { |key, value| key =~ /X-Ratelimit/ }.to_h
+      @rate_limit = rate_limit unless rate_limit.empty?
 
-    def http(path, method: :get, params: nil, headers: nil, body: nil)
-      url = File.join(HOST, path)
-
-      request = Typhoeus::Request.new(
-        url,
-        method: method,
-        params: params,
-        headers: headers,
-        body: body,
-      )
-      request.run
+      JSON.parse(response.body)
     end
 
     def track_rate_limit(headers)
-      rate_limit = headers.select { |key, value| key =~ /X-Ratelimit/ }
-      @rate_limit = rate_limit unless rate_limit.empty?
-    end
-
-    def request_headers
-      {
-        'Authorization' => "Bearer #{@token}",
-        'Content-Type' => 'application/json',
-        'Accept-Version' => '1.0.0',
-      }
     end
 
     # https://developers.webflow.com/#errors
