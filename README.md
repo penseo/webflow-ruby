@@ -20,6 +20,12 @@ Or install it yourself as:
 
 Have a look at the tests, seriously!
 
+### Quick Start
+```ruby
+    client = Webflow::Client.new(WEBFLOW_API_TOKEN)
+    sites = client.sites
+```
+
 ## Todo
 
 * Use HTTPRB
