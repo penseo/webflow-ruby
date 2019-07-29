@@ -22,7 +22,6 @@ Have a look at the tests, seriously!
 
 ## Todo
 
-* Use HTTPRB
 * Error handling, it's all JSON for now
 * Resource mapping, it's plain hashes for now
 * Proper docs
