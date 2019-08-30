@@ -1,6 +1,6 @@
 ## 0.7.0
 
-* [FEATURE] Configuration class to store api token
+* [FEATURE] Configuration class to store api token https://github.com/penseo/webflow-ruby/pull/6 😍 @mateuscruz
 
 ## 0.6.0
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    webflow-ruby (0.6.0)
+    webflow-ruby (0.7.0)
       http
 
 GEM
@@ -48,3 +48,6 @@ DEPENDENCIES
   vcr
   webflow-ruby!
   webmock
+
+BUNDLED WITH
+   1.17.2
