@@ -4,8 +4,8 @@ module Webflow
   class Client
     HOST = 'https://api.webflow.com'
 
-    def initialize(token)
-      @token = token
+    def initialize(token = nil)
+      @token = token || Webflow.config.api_token
       @rate_limit = {}
     end
 

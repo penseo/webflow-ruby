@@ -1,3 +1,7 @@
+## 0.7.0
+
+* [FEATURE] Configuration class to store api token
+
 ## 0.6.0
 
 * [CHANGE] Use pure ruby dependencies
