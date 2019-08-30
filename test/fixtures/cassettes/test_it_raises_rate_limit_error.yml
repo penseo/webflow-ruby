@@ -42,8 +42,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '[{"_id":"58c9a554a118f71a388bcc89","lastUpdated":"2017-03-15T20:34:28.136Z","createdOn":"2017-03-15T20:34:28.120Z","name":"Blog
-        Posts","slug":"post","singularName":"Blog Post"}]'
+      string: '{"msg"=>"Rate limit hit", "code"=>429, "name"=>"RateLimit", "path"=>"/sites/58c9a534b6b690592691fe96/collections", "err"=>"RateLimit: Rate limit hit"}'
     http_version:
   recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
 recorded_with: VCR 3.0.3
