@@ -84,10 +84,10 @@ module Webflow
       post("/collections/#{collection_id}/items", fields: data)
     end
 
-    def update_item(item, data)
+    def update_item(item, data, live=false)
       # FIXME: (PS) looks like the API does not have partial updates...
       base = item.reject {|key, _| ['_id', 'published-by', 'published-on', 'created-on', 'created-by', 'updated-by', 'updated-on', '_cid'].include?(key) }
-      put("/collections/#{item['_cid']}/items/#{item['_id']}", fields: base.merge(data))
+      put("/collections/#{item['_cid']}/items/#{item['_id']}?live=#{live}", fields: base.merge(data))
     end
 
     def delete_item(item)
