@@ -19,7 +19,7 @@ http_interactions:
       - ''
   response:
     status:
-      code: 429 
+      code: 429
       message: OK
     headers:
       Content-Type:
@@ -42,7 +42,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"msg"=>"Rate limit hit", "code"=>429, "name"=>"RateLimit", "path"=>"/sites/58c9a534b6b690592691fe96/collections", "err"=>"RateLimit: Rate limit hit"}'
+      string: '{"msg":"Rate limit hit","code":429,"name":"RateLimit","path":"/collections/58c9a554a118f71a388bcc89/items","err":"RateLimit: Rate limit hit"}'
     http_version:
   recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
 recorded_with: VCR 3.0.3

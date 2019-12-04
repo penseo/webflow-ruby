@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    webflow-ruby (0.7.0)
+    webflow-ruby (1.0.0)
       http
 
 GEM

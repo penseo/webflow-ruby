@@ -59,16 +59,19 @@ class WebflowTest < Minitest::Test
     end
   end
 
-  def test_handles_errors_gracefully
+  def test_handles_raises_validation_errors
     VCR.use_cassette('test_handles_errors_gracefully') do
       data = {
         _archived:  false,
         _draft:     false,
         unknown:    'this raises an error',
       }
-      response = client.create_item(COLLECTION_ID, data)
-      error = {"msg"=>"'fields.name' is required", "code"=>400, "name"=>"ValidationError", "path"=>"/collections/58c9a554a118f71a388bcc89/items", "err"=>"ValidationError: 'fields.name' is required"}
-      assert_equal(error, response)
+      begin
+        client.create_item(COLLECTION_ID, data)
+      rescue => err
+        error = {"msg"=>"'fields.name' is required", "code"=>400, "name"=>"ValidationError", "path"=>"/collections/58c9a554a118f71a388bcc89/items", "err"=>"ValidationError: 'fields.name' is required"}
+        assert_equal(error, err.data)
+      end
     end
   end
 
@@ -126,7 +129,7 @@ class WebflowTest < Minitest::Test
 
   def test_it_raises_rate_limit_error
     VCR.use_cassette('test_it_raises_rate_limit_error') do
-      assert_raises Webflow::RateLimitError do
+      assert_raises Webflow::Error do
         client.collections(SITE_ID)
       end
     end

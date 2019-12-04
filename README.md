@@ -28,9 +28,8 @@ Have a look at the tests, seriously!
 
 ## Todo
 
-* Error handling, it's all JSON for now
 * Resource mapping, it's plain hashes for now
-* Proper docs
+* Proper docs (please look at the tests for now)
 
 ## Contributing
 
