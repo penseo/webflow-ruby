@@ -124,6 +124,14 @@ class WebflowTest < Minitest::Test
     end
   end
 
+  def test_it_raises_rate_limit_error
+    VCR.use_cassette('test_it_raises_rate_limit_error') do
+      assert_raises Webflow::RateLimitError do
+        client.collections(SITE_ID)
+      end
+    end
+  end
+
   def client
     @client ||= Webflow::Client.new(TEST_API_TOKEN)
   end

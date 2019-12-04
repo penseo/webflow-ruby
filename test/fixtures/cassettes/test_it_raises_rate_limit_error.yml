@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.webflow.com/sites/58c9a534b6b690592691fe96/collections
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Content-Type:
+      - application/json
+      Accept-Version:
+      - 1.0.0
+      Expect:
+      - ''
+  response:
+    status:
+      code: 429 
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 16 Mar 2017 19:38:51 GMT
+      Etag:
+      - W/"b1-da95a5a7"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '41'
+      X-Response-Time:
+      - 33.577ms
+      X-Wf-Rid:
+      - 5bcfa221-71ec-498e-bce0-34b6788ad504
+      Content-Length:
+      - '177'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"msg"=>"Rate limit hit", "code"=>429, "name"=>"RateLimit", "path"=>"/sites/58c9a534b6b690592691fe96/collections", "err"=>"RateLimit: Rate limit hit"}'
+    http_version:
+  recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
+recorded_with: VCR 3.0.3
