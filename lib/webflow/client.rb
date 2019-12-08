@@ -80,14 +80,14 @@ module Webflow
       json['items'].first
     end
 
-    def create_item(collection_id, data)
-      post("/collections/#{collection_id}/items", fields: data)
+    def create_item(collection_id, data, live=false)
+      post("/collections/#{collection_id}/items", {fields: data}, live)
     end
 
-    def update_item(item, data)
+    def update_item(item, data, live=false)
       # FIXME: (PS) looks like the API does not have partial updates...
       base = item.reject {|key, _| ['_id', 'published-by', 'published-on', 'created-on', 'created-by', 'updated-by', 'updated-on', '_cid'].include?(key) }
-      put("/collections/#{item['_cid']}/items/#{item['_id']}", fields: base.merge(data))
+      put("/collections/#{item['_cid']}/items/#{item['_id']}", {fields: base.merge(data)}, live)
     end
 
     def delete_item(item)
@@ -100,19 +100,20 @@ module Webflow
       request(path, method: :get, params: params)
     end
 
-    def post(path, data)
-      request(path, method: :post, data: data)
+    def post(path, data, live)
+      request(path, method: :post, data: data, live: live)
     end
 
-    def put(path, data)
-      request(path, method: :put, data: data)
+    def put(path, data, live)
+      request(path, method: :put, data: data, live: live)
     end
 
     def delete(path)
       request(path, method: :delete)
     end
 
-    def request(path, method: :get, params: nil, data: nil)
+    def request(path, method: :get, params: nil, data: nil, live: false)
+      path = path + '?live=true' if live
       url = URI.join(HOST, path)
       bearer = "Bearer #{@token}"
       headers = {'Accept-Version' => '1.0.0'}
