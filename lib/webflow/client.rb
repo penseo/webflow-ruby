@@ -10,7 +10,15 @@ module Webflow
     end
 
     def rate_limit
-      @rate_limit
+      @rate_limit || {}
+    end
+
+    def limit
+      rate_limit['X-Ratelimit-Limit'].to_i
+    end
+
+    def remaining
+      rate_limit['X-Ratelimit-Remaining'].to_i
     end
 
     def info
@@ -67,7 +75,9 @@ module Webflow
 
       num_pages.times do |i|
         resp = paginate_items(collection_id, per_page: per_page, page: i+1)
-        fetched_items += resp['items']
+        items = resp['items']
+        yield(items) if block_given?
+        fetched_items += items
         limit -= resp['count']
         break if limit <= 0 || resp['total'] <= fetched_items.length
       end

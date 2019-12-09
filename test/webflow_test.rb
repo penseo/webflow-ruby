@@ -75,7 +75,6 @@ class WebflowTest < Minitest::Test
     end
   end
 
-
   def test_it_paginates_items
     VCR.use_cassette('test_it_paginates_items') do
       names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
@@ -89,6 +88,22 @@ class WebflowTest < Minitest::Test
       page_two = client.paginate_items(COLLECTION_ID, per_page: 2, page: 2)
       assert_equal(page_two['count'], 2)
       assert_equal((page_one['items'] == page_two['items']), false)
+    end
+  end
+
+  def test_it_yields_items_when_a_block_is_given
+    VCR.use_cassette('test_it_paginates_items') do
+      names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
+      names.each do |name|
+        client.create_item(COLLECTION_ID, { name: name, _archived: false, _draft: false })
+      end
+
+      limit = 3
+      client.items(COLLECTION_ID, limit: limit) do |items|
+        assert_equal(client.limit, 60)
+        assert_equal(client.remaining, 60)
+        assert_equal(items.length, limit)
+      end
     end
   end
 
@@ -110,7 +125,7 @@ class WebflowTest < Minitest::Test
       end
 
       limit = 3
-      items = client.items(COLLECTION_ID, limit: limit)
+      items = client.items(COLLECTION_ID, limit: 3)
       assert_equal(items.length, limit)
     end
   end
