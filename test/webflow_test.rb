@@ -100,8 +100,6 @@ class WebflowTest < Minitest::Test
 
       limit = 3
       client.items(COLLECTION_ID, limit: limit) do |items|
-        assert_equal(client.limit, 60)
-        assert_equal(client.remaining, 60)
         assert_equal(items.length, limit)
       end
     end
@@ -135,10 +133,14 @@ class WebflowTest < Minitest::Test
       client.collections(SITE_ID)
       limit = {"X-Ratelimit-Limit"=>"60", "X-Ratelimit-Remaining"=>"41"}
       assert_equal(limit, client.rate_limit)
+      assert_equal(client.limit, 60)
+      assert_equal(client.remaining, 41)
 
       client.collections(SITE_ID)
       limit = {"X-Ratelimit-Limit"=>"60", "X-Ratelimit-Remaining"=>"40"}
       assert_equal(limit, client.rate_limit)
+      assert_equal(client.limit, 60)
+      assert_equal(client.remaining, 40)
     end
   end
 
