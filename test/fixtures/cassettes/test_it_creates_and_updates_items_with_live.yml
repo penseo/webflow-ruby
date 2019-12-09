@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items?live=true
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"_archived":false,"_draft":false,"name":"Test Item Name
+        ABC LIVE"}}'
+    headers:
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Accept-Version:
+      - 1.0.0
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 09 Dec 2019 12:11:01 GMT
+      Etag:
+      - W/"1b2-825fef0"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Response-Time:
+      - 66.015ms
+      X-Wf-Rid:
+      - e1a5792e-bcec-4b10-934b-e1fe6cf80057
+      Content-Length:
+      - '434'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC LIVE","slug":"test-item-name-abc-live-2","updated-on":"2019-12-09T12:11:01.443Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-12-09T12:11:01.443Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":"2019-12-09T12:11:01.443Z","published-by":"Person_58c996964e6fd9182228b62b","_cid":"58c9a554a118f71a388bcc89","_id":"5dee39d545001eee0a8e148d"}'
+    http_version: 
+  recorded_at: Mon, 09 Dec 2019 12:11:00 GMT
+- request:
+    method: put
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/5dee39d545001eee0a8e148d?live=true
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"_archived":false,"_draft":false,"name":"Test Item Name
+        ABC LIVE","slug":"test-item-name-abc-live-2","name":"Test Item Name Update
+        DEF LIVE"}}'
+    headers:
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Accept-Version:
+      - 1.0.0
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 09 Dec 2019 12:11:01 GMT
+      Etag:
+      - W/"1b9-5b5eed53"
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '57'
+      X-Response-Time:
+      - 92.917ms
+      X-Wf-Rid:
+      - 5988f1b2-7754-41b7-bcc7-6110bfb916c0
+      Content-Length:
+      - '441'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"_archived":false,"_draft":false,"name":"Test Item Name Update DEF
+        LIVE","slug":"test-item-name-abc-live-2","updated-on":"2019-12-09T12:11:01.935Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-12-09T12:11:01.443Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":"2019-12-09T12:11:01.935Z","published-by":"Person_58c996964e6fd9182228b62b","_cid":"58c9a554a118f71a388bcc89","_id":"5dee39d545001eee0a8e148d"}'
+    http_version: 
+  recorded_at: Mon, 09 Dec 2019 12:11:01 GMT
+recorded_with: VCR 5.0.0

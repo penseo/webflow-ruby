@@ -47,6 +47,25 @@ class WebflowTest < Minitest::Test
     end
   end
 
+  def test_it_creates_and_updates_items_with_live
+    VCR.use_cassette('test_it_creates_and_updates_items_with_live') do
+      name = 'Test Item Name ABC LIVE'
+      data = {
+        _archived:  false,
+        _draft:     false,
+        name:       name,
+      }
+
+      item = client.create_item(COLLECTION_ID, data, live: true)
+      assert_equal(name, item['name'])
+
+      name = 'Test Item Name Update DEF LIVE'
+
+      item = client.update_item(item, {name: name}, live: true)
+      assert_equal(name, item['name'])
+    end
+  end
+
   def test_it_fetches_a_single_item
     VCR.use_cassette('test_it_fetches_a_single_item') do
       data = {
