@@ -42,7 +42,7 @@ class WebflowTest < Minitest::Test
       assert_equal(name, item['name'])
 
       name = 'Test Item Name Update DEF'
-      item = client.update_item(item, name: name)
+      item = client.update_item(item, {name: name})
       assert_equal(name, item['name'])
     end
   end

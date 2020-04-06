@@ -39,7 +39,7 @@ module Webflow
 
     def publish(site_id, domain_names: nil)
       domain_names ||= domains(site_id).map { |domain| domain['name'] }
-      post("/sites/#{site_id}/publish", domains: domain_names)
+      post("/sites/#{site_id}/publish", {domains: domain_names})
     end
 
     def collections(site_id)
