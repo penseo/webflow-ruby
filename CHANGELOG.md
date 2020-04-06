@@ -1,3 +1,6 @@
+## 1.1.1
+* [FEATURE] Add patch support for updating items https://github.com/penseo/webflow-ruby/issues/10 😍 @ukd1
+
 ## 1.1.0
 
 * [FEATURE] Allow passing a block to `items` that yields the results by page https://github.com/penseo/webflow-ruby/issues/9 😍 @emilesilvis

@@ -8,16 +8,16 @@ http_interactions:
       string: '{"fields":{"_archived":false,"_draft":false,"name":"Test Item Name
         ABC"}}'
     headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
       - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
       Accept-Version:
       - 1.0.0
-      Expect:
-      - ''
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      User-Agent:
+      - http.rb/4.4.1
   response:
     status:
       code: 200
@@ -26,44 +26,43 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 19:38:52 GMT
+      - Mon, 06 Apr 2020 21:47:11 GMT
       Etag:
-      - W/"173-cc9d58e8"
+      - W/"176-8cb1de01"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '39'
+      - '55'
       X-Response-Time:
-      - 54.942ms
+      - 52.097ms
       X-Wf-Rid:
-      - 8dc8f8d1-6ed9-4e06-997e-699dc9a8a3fe
+      - b797db53-6a9c-4226-899d-de5c74a7f1e3
       Content-Length:
-      - '371'
+      - '374'
       Connection:
-      - keep-alive
+      - Close
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC","slug":"test-item-name-abc","updated-on":"2017-03-16T19:38:52.072Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T19:38:52.072Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cae9cc02523c88492bf246"}'
+      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC","slug":"test-item-name-abc-bc","updated-on":"2020-04-06T21:47:11.371Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2020-04-06T21:47:11.371Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5e8ba35f4b5cbe7e20f2d010"}'
     http_version: 
-  recorded_at: Thu, 16 Mar 2017 19:38:52 GMT
+  recorded_at: Mon, 06 Apr 2020 21:47:11 GMT
 - request:
-    method: put
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/58cae9cc02523c88492bf246
+    method: patch
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/5e8ba35f4b5cbe7e20f2d010
     body:
       encoding: UTF-8
-      string: '{"fields":{"_archived":false,"_draft":false,"name":"Test Item Name
-        ABC","slug":"test-item-name-abc","name":"Test Item Name Update DEF"}}'
+      string: '{"fields":{"name":"Test Item Name Update DEF"}}'
     headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
       - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
       Accept-Version:
       - 1.0.0
-      Expect:
-      - ''
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      User-Agent:
+      - http.rb/4.4.1
   response:
     status:
       code: 200
@@ -72,24 +71,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 19:38:52 GMT
+      - Mon, 06 Apr 2020 21:47:11 GMT
       Etag:
-      - W/"17a-fb66147"
+      - W/"17d-7fa521a5"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '38'
+      - '54'
       X-Response-Time:
-      - 39.066ms
+      - 110.039ms
       X-Wf-Rid:
-      - 2fe58a4f-2d69-4b0e-8197-71925cf781a1
+      - 397cc20d-5efc-4a1c-8ea3-d8189dc54d7b
       Content-Length:
-      - '378'
+      - '381'
       Connection:
-      - keep-alive
+      - Close
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name Update DEF","slug":"test-item-name-abc","updated-on":"2017-03-16T19:38:52.217Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T19:38:52.072Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cae9cc02523c88492bf246"}'
+      string: '{"_archived":false,"_draft":false,"name":"Test Item Name Update DEF","slug":"test-item-name-abc-bc","updated-on":"2020-04-06T21:47:11.814Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2020-04-06T21:47:11.371Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5e8ba35f4b5cbe7e20f2d010"}'
     http_version: 
-  recorded_at: Thu, 16 Mar 2017 19:38:52 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Mon, 06 Apr 2020 21:47:11 GMT
+recorded_with: VCR 5.0.0
