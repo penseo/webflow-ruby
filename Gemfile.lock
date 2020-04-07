@@ -53,6 +53,3 @@ DEPENDENCIES
   vcr
   webflow-ruby!
   webmock
-
-BUNDLED WITH
-   1.17.2
