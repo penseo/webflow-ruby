@@ -39,7 +39,7 @@ module Webflow
 
     def publish(site_id, domain_names: nil)
       domain_names ||= domains(site_id).map { |domain| domain['name'] }
-      post("/sites/#{site_id}/publish", domains: domain_names)
+      post("/sites/#{site_id}/publish", {domains: domain_names})
     end
 
     def collections(site_id)
@@ -95,9 +95,7 @@ module Webflow
     end
 
     def update_item(item, data, live: false)
-      # FIXME: (PS) looks like the API does not have partial updates...
-      base = item.reject {|key, _| ['_id', 'published-by', 'published-on', 'created-on', 'created-by', 'updated-by', 'updated-on', '_cid'].include?(key) }
-      put("/collections/#{item['_cid']}/items/#{item['_id']}", {fields: base.merge(data)}, live: live)
+      patch("/collections/#{item['_cid']}/items/#{item['_id']}", {fields: data}, live: live)
     end
 
     def delete_item(item)
@@ -115,9 +113,9 @@ module Webflow
       request(path, method: :post, params: params, data: data)
     end
 
-    def put(path, data, live: nil)
+    def patch(path, data, live: nil)
       params = { live: 'true' } if live
-      request(path, method: :put, params: params, data: data)
+      request(path, method: :patch, params: params, data: data)
     end
 
     def delete(path)
