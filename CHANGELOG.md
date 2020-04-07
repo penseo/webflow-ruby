@@ -1,4 +1,4 @@
-## 1.1.1
+## 1.2.0
 * [FEATURE] Add patch support for updating items https://github.com/penseo/webflow-ruby/issues/10 😍 @ukd1
 
 ## 1.1.0
