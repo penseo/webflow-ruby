@@ -87,6 +87,7 @@ class WebflowTest < Minitest::Test
       }
       begin
         client.create_item(COLLECTION_ID, data)
+        raise 'Unreachable code'
       rescue => err
         error = {"msg"=>"'fields.name' is required", "code"=>400, "name"=>"ValidationError", "path"=>"/collections/58c9a554a118f71a388bcc89/items", "err"=>"ValidationError: 'fields.name' is required"}
         assert_equal(error, err.data)
