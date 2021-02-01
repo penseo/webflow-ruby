@@ -28,7 +28,12 @@ module Webflow
     def initialize(data)
       @data = data
 
-      super(data['msg'])
+      error_message = <<~END_OF_ERROR
+        #{data['msg']}
+        #{(data['problems'] || []).join("\n")}
+      END_OF_ERROR
+
+      super(error_message)
     end
   end
 end

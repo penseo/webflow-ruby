@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"_archived":false,"_draft":false,"name":5}}'
+    headers:
+      Authorization:
+      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
+      Accept-Version:
+      - 1.0.0
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.4.1
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 31 Jan 2021 17:50:45 GMT
+      Etag:
+      - W/"c5-62e2d870"
+      X-Response-Time:
+      - 2.000ms
+      X-Wf-Rid:
+      - b0133f4a-0b85-4aaa-b9db-77a8a74f7caf
+      Content-Length:
+      - '197'
+      Connection:
+      - Close
+    body:
+      encoding: UTF-8
+      string: '{"msg":"Validation Failure","code":400,"name":"ValidationError","path":"/collections/58c9a554a118f71a388bcc89/items","err":"ValidationError: Validation Failure","problems":["Field ''name'': Expected value to be a single line: ''Monday:\\n'' +\n  ''Fever\\n''"],"problem_data":[{"slug":"name", "msg":"Expected value to be a single line","value":"''Monday:\\n'' +\n  ''Fever\\n''"}]}'
+    http_version:
+  recorded_at: Sun, 31 Jan 2021 17:50:45 GMT
+recorded_with: VCR 5.1.0

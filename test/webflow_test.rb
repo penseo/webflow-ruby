@@ -95,6 +95,29 @@ class WebflowTest < Minitest::Test
     end
   end
 
+  def test_raises_with_error_details
+    VCR.use_cassette('test_raises_with_error_details') do
+      data = {
+        _archived:  false,
+        _draft:     false,
+        name:    <<~EOS
+          Monday:
+          Fever
+        EOS
+      }
+      begin
+        client.create_item(COLLECTION_ID, data)
+        raise 'Unreachable code'
+      rescue => err
+        error = <<~END_OF_ERROR
+          Validation Failure
+          Field 'name': Expected value to be a single line: 'Monday:\\n' +\n  'Fever\\n'
+        END_OF_ERROR
+        assert_equal(error, err.message)
+      end
+    end
+  end
+
   def test_it_paginates_items
     VCR.use_cassette('test_it_paginates_items') do
       names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
