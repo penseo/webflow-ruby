@@ -30,5 +30,9 @@ module Webflow
 
       super(data['msg'])
     end
+
+    def problems
+      data['problems']
+    end
   end
 end

@@ -8,16 +8,18 @@ http_interactions:
       string: '{"fields":{"_archived":false,"_draft":false,"unknown":"this raises
         an error"}}'
     headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
       - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
       Accept-Version:
       - 1.0.0
-      Expect:
-      - ''
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.4.1
   response:
     status:
       code: 400
@@ -26,21 +28,21 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 19:58:40 GMT
+      - Tue, 02 Feb 2021 11:33:14 GMT
       Etag:
       - W/"af-3b984f1a"
       X-Response-Time:
-      - 10.586ms
+      - 2.482ms
       X-Wf-Rid:
-      - 37cddca5-9e31-49df-a097-d526e115f02d
+      - bac41274-50b3-430e-add5-80ddd20bf60d
       Content-Length:
       - '175'
       Connection:
-      - keep-alive
+      - Close
     body:
       encoding: UTF-8
       string: '{"msg":"''fields.name'' is required","code":400,"name":"ValidationError","path":"/collections/58c9a554a118f71a388bcc89/items","err":"ValidationError:
         ''fields.name'' is required"}'
-    http_version: 
-  recorded_at: Thu, 16 Mar 2017 19:58:40 GMT
-recorded_with: VCR 3.0.3
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:14 GMT
+recorded_with: VCR 5.1.0

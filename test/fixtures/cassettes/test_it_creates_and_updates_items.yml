@@ -16,6 +16,8 @@ http_interactions:
       - close
       Content-Type:
       - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/4.4.1
   response:
@@ -26,29 +28,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 06 Apr 2020 21:47:11 GMT
+      - Tue, 02 Feb 2021 11:33:03 GMT
       Etag:
-      - W/"176-8cb1de01"
+      - W/"184-47710cfa"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '55'
+      - '58'
       X-Response-Time:
-      - 52.097ms
+      - 1228.224ms
       X-Wf-Rid:
-      - b797db53-6a9c-4226-899d-de5c74a7f1e3
+      - dd162720-347f-4e22-8423-7679b06ef648
       Content-Length:
-      - '374'
+      - '388'
       Connection:
       - Close
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC","slug":"test-item-name-abc-bc","updated-on":"2020-04-06T21:47:11.371Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2020-04-06T21:47:11.371Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5e8ba35f4b5cbe7e20f2d010"}'
-    http_version: 
-  recorded_at: Mon, 06 Apr 2020 21:47:11 GMT
+      string: '{"_archived":false,"_draft":false,"featured":false,"name":"Test Item
+        Name ABC","slug":"test-item-name-abc","updated-on":"2021-02-02T11:33:03.834Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2021-02-02T11:33:03.834Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"6019386fd12b7bde038fdd35"}'
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:03 GMT
 - request:
     method: patch
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/5e8ba35f4b5cbe7e20f2d010
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/6019386fd12b7bde038fdd35
     body:
       encoding: UTF-8
       string: '{"fields":{"name":"Test Item Name Update DEF"}}'
@@ -61,6 +64,8 @@ http_interactions:
       - close
       Content-Type:
       - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/4.4.1
   response:
@@ -71,24 +76,25 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 06 Apr 2020 21:47:11 GMT
+      - Tue, 02 Feb 2021 11:33:04 GMT
       Etag:
-      - W/"17d-7fa521a5"
+      - W/"18b-318c8025"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '54'
+      - '57'
       X-Response-Time:
-      - 110.039ms
+      - 192.948ms
       X-Wf-Rid:
-      - 397cc20d-5efc-4a1c-8ea3-d8189dc54d7b
+      - 2de82553-df94-40b6-b3bc-c34db0e64b4f
       Content-Length:
-      - '381'
+      - '395'
       Connection:
       - Close
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name Update DEF","slug":"test-item-name-abc-bc","updated-on":"2020-04-06T21:47:11.814Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2020-04-06T21:47:11.371Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5e8ba35f4b5cbe7e20f2d010"}'
-    http_version: 
-  recorded_at: Mon, 06 Apr 2020 21:47:11 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_archived":false,"_draft":false,"featured":false,"name":"Test Item
+        Name Update DEF","slug":"test-item-name-abc","updated-on":"2021-02-02T11:33:04.480Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2021-02-02T11:33:03.834Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"6019386fd12b7bde038fdd35"}'
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:04 GMT
+recorded_with: VCR 5.1.0

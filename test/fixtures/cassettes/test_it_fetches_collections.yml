@@ -4,19 +4,19 @@ http_interactions:
     method: get
     uri: https://api.webflow.com/sites/58c9a534b6b690592691fe96/collections
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
       - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
       Accept-Version:
       - 1.0.0
-      Expect:
-      - ''
+      Connection:
+      - close
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.4.1
   response:
     status:
       code: 200
@@ -25,25 +25,25 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 19:38:51 GMT
+      - Tue, 02 Feb 2021 11:33:16 GMT
       Etag:
-      - W/"b1-da95a5a7"
+      - W/"b1-c4a4d918"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '44'
+      - '41'
       X-Response-Time:
-      - 28.008ms
+      - 24.597ms
       X-Wf-Rid:
-      - 1d607924-6ed5-4059-b200-bee367268c7a
+      - e082a377-4e65-4a99-918f-360356a80a99
       Content-Length:
       - '177'
       Connection:
-      - keep-alive
+      - Close
     body:
       encoding: UTF-8
-      string: '[{"_id":"58c9a554a118f71a388bcc89","lastUpdated":"2017-03-15T20:34:28.136Z","createdOn":"2017-03-15T20:34:28.120Z","name":"Blog
+      string: '[{"_id":"58c9a554a118f71a388bcc89","lastUpdated":"2021-02-02T11:32:19.796Z","createdOn":"2017-03-15T20:34:28.120Z","name":"Blog
         Posts","slug":"post","singularName":"Blog Post"}]'
-    http_version: 
-  recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
-recorded_with: VCR 3.0.3
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:16 GMT
+recorded_with: VCR 5.1.0
