@@ -1,189 +1,6 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items?limit=100
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Authorization:
-      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
-      Accept-Version:
-      - 1.0.0
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Tue, 11 Apr 2017 14:44:51 GMT
-      Etag:
-      - W/"1b1-e860cb2f"
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '60'
-      X-Response-Time:
-      - 28.502ms
-      X-Wf-Rid:
-      - 3ca30a20-3a30-48b0-b968-4b739f00e796
-      Content-Length:
-      - '433'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"items":[{"_archived":false,"_draft":false,"name":"Test Item Name
-        Update DEF","slug":"test-item-name-abc","updated-on":"2017-03-16T19:38:52.217Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T19:38:52.072Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cae9cc02523c88492bf246"}],"count":1,"limit":100,"offset":0,"total":1}'
-    http_version: 
-  recorded_at: Tue, 11 Apr 2017 14:44:46 GMT
-- request:
-    method: get
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/58cae9cc02523c88492bf246
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Authorization:
-      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
-      Accept-Version:
-      - 1.0.0
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Tue, 11 Apr 2017 14:44:51 GMT
-      Etag:
-      - W/"1b1-e860cb2f"
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '59'
-      X-Response-Time:
-      - 27.745ms
-      X-Wf-Rid:
-      - 9c568d5e-06fd-47d4-8208-2a47842f6310
-      Content-Length:
-      - '433'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"items":[{"_archived":false,"_draft":false,"name":"Test Item Name
-        Update DEF","slug":"test-item-name-abc","updated-on":"2017-03-16T19:38:52.217Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2017-03-16T19:38:52.072Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"58cae9cc02523c88492bf246"}],"count":1,"limit":100,"offset":0,"total":1}'
-    http_version: 
-  recorded_at: Tue, 11 Apr 2017 14:44:46 GMT
-- request:
-    method: get
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items?limit=100&offset=0
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Authorization:
-      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
-      Accept-Version:
-      - 1.0.0
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Tue, 15 Jan 2019 18:05:37 GMT
-      Etag:
-      - W/"37-245d0dcb"
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '60'
-      X-Response-Time:
-      - 11.523ms
-      X-Wf-Rid:
-      - 72e32c13-db77-4c07-a818-ecc10e254680
-      Content-Length:
-      - '55'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"items":[],"count":0,"limit":100,"offset":0,"total":0}'
-    http_version: 
-  recorded_at: Tue, 15 Jan 2019 18:05:37 GMT
-- request:
-    method: get
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items?limit=100&offset=0
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Authorization:
-      - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
-      Accept-Version:
-      - 1.0.0
-      Expect:
-      - ''
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Content-Type:
-      - application/json; charset=utf-8
-      Date:
-      - Tue, 15 Jan 2019 21:52:50 GMT
-      Etag:
-      - W/"8d-5548336d"
-      X-Ratelimit-Limit:
-      - '60'
-      X-Ratelimit-Remaining:
-      - '0'
-      X-Response-Time:
-      - 7.035ms
-      X-Wf-Rid:
-      - b04343f4-577c-466d-a2b6-e821c7d94e7b
-      Content-Length:
-      - '141'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"msg":"Rate limit hit","code":400,"name":"RateLimit","path":"/collections/58c9a554a118f71a388bcc89/items","err":"RateLimit:
-        Rate limit hit"}'
-    http_version: 
-  recorded_at: Tue, 15 Jan 2019 21:52:50 GMT
-- request:
     method: post
     uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items
     body:
@@ -191,16 +8,18 @@ http_interactions:
       string: '{"fields":{"_archived":false,"_draft":false,"name":"Test Item Name
         ABC"}}'
     headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
       - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
       Accept-Version:
       - 1.0.0
-      Expect:
-      - ''
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.4.1
   response:
     status:
       code: 200
@@ -209,43 +28,44 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 15 Jan 2019 22:09:12 GMT
+      - Tue, 02 Feb 2021 11:33:10 GMT
       Etag:
-      - W/"173-e2907c4d"
+      - W/"186-2ba5953b"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '60'
+      - '48'
       X-Response-Time:
-      - 28.155ms
+      - 77.861ms
       X-Wf-Rid:
-      - ba11516a-63da-4285-a85e-0d3afacf5234
+      - 6b2cbab1-c503-4b5a-aa82-833388b410f8
       Content-Length:
-      - '371'
+      - '390'
       Connection:
-      - keep-alive
+      - Close
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC","slug":"test-item-name-abc","updated-on":"2019-01-15T22:09:12.781Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:09:12.781Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5a081effa730403e741d"}'
-    http_version: 
-  recorded_at: Tue, 15 Jan 2019 22:09:12 GMT
+      string: '{"_archived":false,"_draft":false,"featured":false,"name":"Test Item
+        Name ABC","slug":"test-item-name-abc-6","updated-on":"2021-02-02T11:33:10.645Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2021-02-02T11:33:10.645Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"60193876364762414ecb0da1"}'
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:10 GMT
 - request:
     method: get
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/5c3e5a081effa730403e741d
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/60193876364762414ecb0da1
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
       - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
       Accept-Version:
       - 1.0.0
-      Expect:
-      - ''
+      Connection:
+      - close
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.4.1
   response:
     status:
       code: 200
@@ -254,25 +74,25 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Tue, 15 Jan 2019 22:09:12 GMT
+      - Tue, 02 Feb 2021 11:33:11 GMT
       Etag:
-      - W/"1aa-719f12ed"
+      - W/"1bd-77ce57dc"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '59'
+      - '47'
       X-Response-Time:
-      - 10.585ms
+      - 35.769ms
       X-Wf-Rid:
-      - 26673f5d-5204-4a5d-8f40-1e38f0c35169
+      - bd622d67-3c67-4990-9299-5a307f64d818
       Content-Length:
-      - '426'
+      - '445'
       Connection:
-      - keep-alive
+      - Close
     body:
       encoding: UTF-8
-      string: '{"items":[{"_archived":false,"_draft":false,"name":"Test Item Name
-        ABC","slug":"test-item-name-abc","updated-on":"2019-01-15T22:09:12.781Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2019-01-15T22:09:12.781Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"5c3e5a081effa730403e741d"}],"count":1,"limit":100,"offset":0,"total":1}'
-    http_version: 
-  recorded_at: Tue, 15 Jan 2019 22:09:12 GMT
-recorded_with: VCR 4.0.0
+      string: '{"items":[{"_archived":false,"_draft":false,"featured":false,"name":"Test
+        Item Name ABC","slug":"test-item-name-abc-6","updated-on":"2021-02-02T11:33:10.645Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2021-02-02T11:33:10.645Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":null,"published-by":null,"_cid":"58c9a554a118f71a388bcc89","_id":"60193876364762414ecb0da1"}],"count":1,"limit":100,"offset":0,"total":6}'
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:11 GMT
+recorded_with: VCR 5.1.0

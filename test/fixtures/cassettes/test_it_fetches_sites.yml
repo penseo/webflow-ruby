@@ -4,19 +4,19 @@ http_interactions:
     method: get
     uri: https://api.webflow.com/sites
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
     headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
       - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
       Accept-Version:
       - 1.0.0
-      Expect:
-      - ''
+      Connection:
+      - close
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.4.1
   response:
     status:
       code: 200
@@ -25,25 +25,25 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 19:38:51 GMT
+      - Tue, 02 Feb 2021 11:33:02 GMT
       Etag:
-      - W/"14c-82747446"
+      - W/"170-c8feaae0"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '43'
+      - '59'
       X-Response-Time:
-      - 43.681ms
+      - 41.049ms
       X-Wf-Rid:
-      - 4a27a322-3f49-4198-905e-a3af74cdceee
+      - b7cc9db7-fff9-428e-9ce1-e50d5f53c830
       Content-Length:
-      - '332'
+      - '368'
       Connection:
-      - keep-alive
+      - Close
     body:
       encoding: UTF-8
       string: '[{"_id":"58c9a534b6b690592691fe96","createdOn":"2017-03-15T20:33:56.416Z","name":"Test
-        Site","shortName":"webflow-ruby-test-site","lastPublished":"2017-03-16T19:38:07.810Z","previewUrl":"https://daks2k3a4ib2z.cloudfront.net/58c9a534b6b690592691fe96/201703161936.png","timezone":"Europe/Paris","database":"58c9a553369191207daa2f22"}]'
-    http_version: 
-  recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
-recorded_with: VCR 3.0.3
+        Site","shortName":"webflow-ruby-test-site","lastPublished":"2021-02-02T11:32:47.932Z","previewUrl":"https://screenshots.webflow.com/sites/58c9a534b6b690592691fe96/20210202111459_29d11d58ef7e09e2d27a2d0664005d75.png","timezone":"Europe/Paris","database":"58c9a553369191207daa2f22"}]'
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:02 GMT
+recorded_with: VCR 5.1.0

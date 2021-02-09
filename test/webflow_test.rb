@@ -78,8 +78,8 @@ class WebflowTest < Minitest::Test
     end
   end
 
-  def test_handles_raises_validation_errors
-    VCR.use_cassette('test_handles_errors_gracefully') do
+  def test_it_raises_validation_errors
+    VCR.use_cassette('test_it_raises_validation_errors') do
       data = {
         _archived:  false,
         _draft:     false,
@@ -87,9 +87,28 @@ class WebflowTest < Minitest::Test
       }
       begin
         client.create_item(COLLECTION_ID, data)
+        flunk('should have raised')
       rescue => err
         error = {"msg"=>"'fields.name' is required", "code"=>400, "name"=>"ValidationError", "path"=>"/collections/58c9a554a118f71a388bcc89/items", "err"=>"ValidationError: 'fields.name' is required"}
         assert_equal(error, err.data)
+      end
+    end
+  end
+
+  def test_it_raises_validation_errors_with_problems
+    VCR.use_cassette('test_raises_validation_errors_with_problems') do
+      data = {
+        _archived:            false,
+        _draft:               false,
+        name:                 'SomeName',
+        field_with_validation: "sh\nrt",
+      }
+      begin
+        client.create_item(COLLECTION_ID, data)
+        flunk('should have raised')
+      rescue => err
+        problems = ["Field 'field_with_validation': Field not described in schema"]
+        assert_equal(problems, err.problems)
       end
     end
   end
@@ -129,7 +148,7 @@ class WebflowTest < Minitest::Test
       items = client.items(COLLECTION_ID)
       items.each do |item|
         result = client.delete_item(item)
-        assert_equal({"deleted"=>1}, result)
+        assert_equal({"deleted"=>{}}, result)
       end
     end
   end

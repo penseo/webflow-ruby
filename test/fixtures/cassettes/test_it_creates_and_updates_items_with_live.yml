@@ -16,6 +16,8 @@ http_interactions:
       - close
       Content-Type:
       - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/4.4.1
   response:
@@ -26,29 +28,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 06 Apr 2020 21:47:10 GMT
+      - Tue, 02 Feb 2021 11:33:12 GMT
       Etag:
-      - W/"1b2-85db5cf9"
+      - W/"1c1-4c183f7a"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '57'
+      - '46'
       X-Response-Time:
-      - 87.220ms
+      - 155.019ms
       X-Wf-Rid:
-      - 60b6d748-5e0f-4ea9-98cc-64bdc99faa47
+      - d3fd10b2-bd33-46c1-8766-878ce1d94cd2
       Content-Length:
-      - '434'
+      - '449'
       Connection:
       - Close
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name ABC LIVE","slug":"test-item-name-abc-live-0","updated-on":"2020-04-06T21:47:10.527Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2020-04-06T21:47:10.527Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":"2020-04-06T21:47:10.527Z","published-by":"Person_58c996964e6fd9182228b62b","_cid":"58c9a554a118f71a388bcc89","_id":"5e8ba35ea54f331a03295019"}'
-    http_version: 
-  recorded_at: Mon, 06 Apr 2020 21:47:10 GMT
+      string: '{"_archived":false,"_draft":false,"featured":false,"name":"Test Item
+        Name ABC LIVE","slug":"test-item-name-abc-live","updated-on":"2021-02-02T11:33:12.226Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2021-02-02T11:33:12.226Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":"2021-02-02T11:33:12.226Z","published-by":"Person_58c996964e6fd9182228b62b","_cid":"58c9a554a118f71a388bcc89","_id":"60193878b0346e5811bb51e6"}'
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:12 GMT
 - request:
     method: patch
-    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/5e8ba35ea54f331a03295019?live=true
+    uri: https://api.webflow.com/collections/58c9a554a118f71a388bcc89/items/60193878b0346e5811bb51e6?live=true
     body:
       encoding: UTF-8
       string: '{"fields":{"name":"Test Item Name Update DEF LIVE"}}'
@@ -61,6 +64,8 @@ http_interactions:
       - close
       Content-Type:
       - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/4.4.1
   response:
@@ -71,25 +76,25 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 06 Apr 2020 21:47:10 GMT
+      - Tue, 02 Feb 2021 11:33:12 GMT
       Etag:
-      - W/"1b9-b96d5c75"
+      - W/"1c8-4a47eef6"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '56'
+      - '45'
       X-Response-Time:
-      - 65.176ms
+      - 180.120ms
       X-Wf-Rid:
-      - 924c2dcb-1aaa-4a19-b111-8c37a06b794a
+      - '009f81a9-47c1-498d-952a-b29daae476dd'
       Content-Length:
-      - '441'
+      - '456'
       Connection:
       - Close
     body:
       encoding: UTF-8
-      string: '{"_archived":false,"_draft":false,"name":"Test Item Name Update DEF
-        LIVE","slug":"test-item-name-abc-live-0","updated-on":"2020-04-06T21:47:10.926Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2020-04-06T21:47:10.527Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":"2020-04-06T21:47:10.926Z","published-by":"Person_58c996964e6fd9182228b62b","_cid":"58c9a554a118f71a388bcc89","_id":"5e8ba35ea54f331a03295019"}'
-    http_version: 
-  recorded_at: Mon, 06 Apr 2020 21:47:11 GMT
-recorded_with: VCR 5.0.0
+      string: '{"_archived":false,"_draft":false,"featured":false,"name":"Test Item
+        Name Update DEF LIVE","slug":"test-item-name-abc-live","updated-on":"2021-02-02T11:33:12.842Z","updated-by":"Person_58c996964e6fd9182228b62b","created-on":"2021-02-02T11:33:12.226Z","created-by":"Person_58c996964e6fd9182228b62b","published-on":"2021-02-02T11:33:12.842Z","published-by":"Person_58c996964e6fd9182228b62b","_cid":"58c9a554a118f71a388bcc89","_id":"60193878b0346e5811bb51e6"}'
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:12 GMT
+recorded_with: VCR 5.1.0

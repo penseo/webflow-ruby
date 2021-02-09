@@ -7,16 +7,18 @@ http_interactions:
       encoding: UTF-8
       string: '{"domains":["webflow-ruby-test-site.webflow.io"]}'
     headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
       Authorization:
       - Bearer 1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be
-      Content-Type:
-      - application/json
       Accept-Version:
       - 1.0.0
-      Expect:
-      - ''
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/4.4.1
   response:
     status:
       code: 200
@@ -25,24 +27,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Thu, 16 Mar 2017 19:38:51 GMT
+      - Tue, 02 Feb 2021 11:33:14 GMT
       Etag:
       - W/"f-dfef9497"
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '42'
+      - '44'
       X-Response-Time:
-      - 54.808ms
+      - 796.995ms
       X-Wf-Rid:
-      - 140e8d8b-a1d7-4e32-bd0d-7c30b4b7ea28
+      - d4ebf7dd-3c40-4b6b-b415-431245e558bf
       Content-Length:
       - '15'
       Connection:
-      - keep-alive
+      - Close
     body:
       encoding: UTF-8
       string: '{"queued":true}'
-    http_version: 
-  recorded_at: Thu, 16 Mar 2017 19:38:51 GMT
-recorded_with: VCR 3.0.3
+    http_version: null
+  recorded_at: Tue, 02 Feb 2021 11:33:14 GMT
+recorded_with: VCR 5.1.0
