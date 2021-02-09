@@ -1,3 +1,6 @@
+## 1.2.1
+* [FEATURE] Handle Problems in Validation errors https://github.com/penseo/webflow-ruby/pull/14 https://github.com/penseo/webflow-ruby/pull/16 😍 @vfonic @sega
+
 ## 1.2.0
 * [FEATURE] Add patch support for updating items https://github.com/penseo/webflow-ruby/issues/10 😍 @ukd1
 
