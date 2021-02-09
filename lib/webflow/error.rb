@@ -28,7 +28,12 @@ module Webflow
     def initialize(data)
       @data = data
 
-      super(data['msg'])
+      message = "#{data['msg']}#{': ' + Array(problems).join(', ') if problems?}"
+      super(message)
+    end
+
+    def problems?
+      !!data['problems']
     end
 
     def problems
