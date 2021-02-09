@@ -87,6 +87,7 @@ class WebflowTest < Minitest::Test
       }
       begin
         client.create_item(COLLECTION_ID, data)
+        flunk('should have raised')
       rescue => err
         error = {"msg"=>"'fields.name' is required", "code"=>400, "name"=>"ValidationError", "path"=>"/collections/58c9a554a118f71a388bcc89/items", "err"=>"ValidationError: 'fields.name' is required"}
         assert_equal(error, err.data)
@@ -104,6 +105,7 @@ class WebflowTest < Minitest::Test
       }
       begin
         client.create_item(COLLECTION_ID, data)
+        flunk('should have raised')
       rescue => err
         problems = ["Field 'field_with_validation': Field not described in schema"]
         assert_equal(problems, err.problems)
