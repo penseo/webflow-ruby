@@ -1,4 +1,4 @@
-# Webflow [![Build Status](https://travis-ci.org/penseo/webflow-ruby.svg?branch=master)](https://travis-ci.org/penseo/webflow-ruby)
+# Webflow [![Build Status](https://github.com/weg-li/weg-li/workflows/build/badge.svg)](https://github.com/weg-li/weg-li/workflows/build/)
 
 ## Installation
 Add this line to your application's Gemfile:
