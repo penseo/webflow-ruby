@@ -131,8 +131,8 @@ module Webflow
 
       track_rate_limit(response.headers)
 
-      result = JSON.parse(response.body)
-      raise Webflow::Error.new(result) if response.code >= 400
+      result = maybe_parsed_json(response.body)
+      raise Webflow::Error.new(result || response.body) if response.code >= 400
 
       result
     end
@@ -140,6 +140,12 @@ module Webflow
     def track_rate_limit(headers)
       rate_limit = headers.select { |key, value| key =~ /X-Ratelimit/ }.to_h
       @rate_limit = rate_limit unless rate_limit.empty?
+    end
+
+    def maybe_parsed_json(hopefully_json)
+      JSON.parse(hopefully_json)
+    rescue JSON::ParserError
+      nil
     end
   end
 end
