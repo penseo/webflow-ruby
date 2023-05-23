@@ -98,8 +98,8 @@ module Webflow
       patch("/collections/#{item['_cid']}/items/#{item['_id']}", {fields: data}, live: live)
     end
 
-    def delete_item(item)
-      delete("/collections/#{item['_cid']}/items/#{item['_id']}")
+    def delete_item(item, live: false)
+      delete("/collections/#{item['_cid']}/items/#{item['_id']}", live: live)
     end
 
     private
@@ -118,8 +118,9 @@ module Webflow
       request(path, method: :patch, params: params, data: data)
     end
 
-    def delete(path)
-      request(path, method: :delete)
+    def delete(path, live: nil)
+      params = { live: 'true' } if live
+      request(path, method: :delete, params: params)
     end
 
     def request(path, method: :get, params: nil, data: nil)
