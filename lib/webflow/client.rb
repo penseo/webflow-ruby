@@ -97,7 +97,7 @@ module Webflow
 
     def update_item(collection_id, item_id, data, is_archived: false, is_draft: false, publish: false)
       result = patch("/collections/#{collection_id}/items/#{item_id}",
-                     { isArchived: is_archived, isDraft: is_draft, fieldData: data })
+                     { isArchived: is_archived, isDraft: is_draft, fieldData: data }.compact)
       return result unless publish
 
       publish_item(collection_id, item_id)
@@ -105,6 +105,11 @@ module Webflow
     end
 
     def delete_item(collection_id, item_id)
+      # deleting items from Webflow doesn't work as expected.
+      # if we delete without archiving, the item will stay visible on the site until the site is published
+      # if we first archive + publish item, the item will be set as archived and not visible on the site
+      # then we call delete to remove the item from Webflow CMS
+      update_item(collection_id, item_id, nil, is_archived: true, publish: true)
       delete("/collections/#{collection_id}/items/#{item_id}")
     end
 
