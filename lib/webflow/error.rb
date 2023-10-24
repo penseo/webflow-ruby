@@ -16,7 +16,7 @@ module Webflow
     # Sample error response
     #
     # {
-    #   "msg": "Cannot access resource",
+    #   "message": "Cannot access resource",
     #   "code": 401,
     #   "name": "Unauthorized",
     #   "path": "/sites/invalid_site",
@@ -28,7 +28,7 @@ module Webflow
     def initialize(data)
       @data = data
 
-      message = "#{data['msg']}#{': ' + Array(problems).join(', ') if problems?}"
+      message = "#{data['message']}#{': ' + Array(problems).join(', ') if problems?}"
       super(message)
     end
 
