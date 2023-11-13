@@ -1,131 +1,131 @@
 require 'test_helper'
 
-TEST_API_TOKEN = '1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be'
-SITE_ID = '58c9a534b6b690592691fe96'
-COLLECTION_ID = '58c9a554a118f71a388bcc89'
-DOMAIN = 'webflow-ruby-test-site.webflow.io'
+TEST_API_TOKEN = '1f0da5c9368af9cb2dcd65d22a6600a8ffa069f70729e129a09787203bc2c2be'.freeze
+SITE_ID = '58c9a534b6b690592691fe96'.freeze
+COLLECTION_ID = '58c9a554a118f71a388bcc89'.freeze
+DOMAIN = 'webflow-ruby-test-site.webflow.io'.freeze
 
 class WebflowTest < Minitest::Test
   def test_it_fetches_sites
     VCR.use_cassette('test_it_fetches_sites') do
-      assert_equal(SITE_ID, client.sites.first['_id'])
+      assert_equal(SITE_ID, client.sites.fetch(:sites).first[:id])
     end
   end
 
   def test_it_publishes_sites
     VCR.use_cassette('test_it_publishes_sites') do
-      assert_equal({"queued"=>true}, client.publish(SITE_ID, domain_names: [DOMAIN]))
+      assert_equal({ 'queued' => true }, client.publish(SITE_ID, domain_names: [DOMAIN]))
     end
   end
 
   def test_it_fetches_collections
     VCR.use_cassette('test_it_fetches_collections') do
-      assert_equal COLLECTION_ID, client.collections(SITE_ID).first['_id']
+      assert_equal COLLECTION_ID, client.collections(SITE_ID).first[:id]
     end
   end
 
   def test_it_fetches_a_single_collection
     VCR.use_cassette('test_it_fetches_single_collection') do
-      assert_equal COLLECTION_ID, client.collection(COLLECTION_ID)['_id']
+      assert_equal COLLECTION_ID, client.collection(COLLECTION_ID)[:id]
     end
   end
 
-  def test_it_creates_and_updates_items
+  def test_it_creates_and_updates_items # rubocop:disable Metrics/MethodLength
     VCR.use_cassette('test_it_creates_and_updates_items') do
       name = 'Test Item Name ABC'
       data = {
-        _archived:  false,
-        _draft:     false,
-        name:       name,
+        _archived: false,
+        _draft: false,
+        name: name
       }
       item = client.create_item(COLLECTION_ID, data)
-      assert_equal(name, item['name'])
+      assert_equal(name, item[:name])
 
       name = 'Test Item Name Update DEF'
-      item = client.update_item(item, {name: name})
-      assert_equal(name, item['name'])
+      item = client.update_item(item, { name: name })
+      assert_equal(name, item[:name])
     end
   end
 
-  def test_it_creates_and_updates_items_with_live
+  def test_it_creates_and_updates_items_with_live # rubocop:disable Metrics/MethodLength
     VCR.use_cassette('test_it_creates_and_updates_items_with_live') do
       name = 'Test Item Name ABC LIVE'
       data = {
-        _archived:  false,
-        _draft:     false,
-        name:       name,
+        _archived: false,
+        _draft: false,
+        name: name
       }
 
       item = client.create_item(COLLECTION_ID, data, live: true)
-      assert_equal(name, item['name'])
+      assert_equal(name, item[:name])
 
       name = 'Test Item Name Update DEF LIVE'
 
-      item = client.update_item(item, {name: name}, live: true)
-      assert_equal(name, item['name'])
+      item = client.update_item(item, { name: name }, live: true)
+      assert_equal(name, item[:name])
     end
   end
 
   def test_it_fetches_a_single_item
     VCR.use_cassette('test_it_fetches_a_single_item') do
       data = {
-        _archived:  false,
-        _draft:     false,
-        name:       'Test Item Name ABC',
+        _archived: false,
+        _draft: false,
+        name: 'Test Item Name ABC'
       }
       item = client.create_item(COLLECTION_ID, data)
-      assert_equal item['_id'], client.item(COLLECTION_ID, item['_id'])['_id']
+      assert_equal item[:id], client.item(COLLECTION_ID, item[:id])[:id]
     end
   end
 
-  def test_it_raises_validation_errors
+  def test_it_raises_validation_errors # rubocop:disable Metrics/MethodLength
     VCR.use_cassette('test_it_raises_validation_errors') do
       data = {
-        _archived:  false,
-        _draft:     false,
-        unknown:    'this raises an error',
+        _archived: false,
+        _draft: false,
+        unknown: 'this raises an error'
       }
       begin
         client.create_item(COLLECTION_ID, data)
         flunk('should have raised')
-      rescue => err
-        error = {"msg"=>"'fields.name' is required", "code"=>400, "name"=>"ValidationError", "path"=>"/collections/58c9a554a118f71a388bcc89/items", "err"=>"ValidationError: 'fields.name' is required"}
-        assert_equal(error, err.data)
+      rescue StandardError => e
+        error = { 'msg' => "'fields.name' is required", 'code' => 400, 'name' => 'ValidationError',
+                  'path' => '/collections/58c9a554a118f71a388bcc89/items', 'err' => "ValidationError: 'fields.name' is required" }
+        assert_equal(error, e.data)
       end
     end
   end
 
-  def test_it_raises_validation_errors_with_problems
+  def test_it_raises_validation_errors_with_problems # rubocop:disable Metrics/MethodLength
     VCR.use_cassette('test_raises_validation_errors_with_problems') do
       data = {
-        _archived:            false,
-        _draft:               false,
-        name:                 'SomeName',
-        field_with_validation: "sh\nrt",
+        _archived: false,
+        _draft: false,
+        name: 'SomeName',
+        field_with_validation: "sh\nrt"
       }
       begin
         client.create_item(COLLECTION_ID, data)
         flunk('should have raised')
-      rescue => err
+      rescue StandardError => e
         problems = ["Field 'field_with_validation': Field not described in schema"]
-        assert_equal(problems, err.problems)
+        assert_equal(problems, e.problems)
       end
     end
   end
 
-  def test_it_paginates_items
+  def test_it_paginates_items # rubocop:disable Metrics/MethodLength
     VCR.use_cassette('test_it_paginates_items') do
       names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
       names.each do |name|
         client.create_item(COLLECTION_ID, { name: name, _archived: false, _draft: false })
       end
 
-
       page_one = client.paginate_items(COLLECTION_ID, per_page: 2, page: 1)
-      assert_equal(page_one['count'], 2)
+      assert_equal(page_one[:count], 2)
       page_two = client.paginate_items(COLLECTION_ID, per_page: 2, page: 2)
-      assert_equal(page_two['count'], 2)
-      assert_equal((page_one['items'] == page_two['items']), false)
+      assert_equal(page_two[:count], 2)
+      assert_equal((page_one[:items] == page_two[:items]), false)
     end
   end
 
@@ -148,7 +148,7 @@ class WebflowTest < Minitest::Test
       items = client.items(COLLECTION_ID)
       items.each do |item|
         result = client.delete_item(item)
-        assert_equal({"deleted"=>{}}, result)
+        assert_equal({ 'deleted' => {} }, result)
       end
     end
   end
@@ -166,16 +166,16 @@ class WebflowTest < Minitest::Test
     end
   end
 
-  def test_it_tracks_rate_limits
+  def test_it_tracks_rate_limits # rubocop:disable Metrics/AbcSize
     VCR.use_cassette('test_it_tracks_rate_limits') do
       client.collections(SITE_ID)
-      limit = {"X-Ratelimit-Limit"=>"60", "X-Ratelimit-Remaining"=>"41"}
+      limit = { 'X-Ratelimit-Limit' => '60', 'X-Ratelimit-Remaining' => '41' }
       assert_equal(limit, client.rate_limit)
       assert_equal(client.limit, 60)
       assert_equal(client.remaining, 41)
 
       client.collections(SITE_ID)
-      limit = {"X-Ratelimit-Limit"=>"60", "X-Ratelimit-Remaining"=>"40"}
+      limit = { 'X-Ratelimit-Limit' => '60', 'X-Ratelimit-Remaining' => '40' }
       assert_equal(limit, client.rate_limit)
       assert_equal(client.limit, 60)
       assert_equal(client.remaining, 40)

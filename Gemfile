@@ -1,4 +1,11 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in webflow.gemspec
 gemspec
+
+gem 'bundler', '> 1.13'
+gem 'byebug'
+gem 'minitest', '> 5.0'
+gem 'pry'
+gem 'rake', '> 10.0'
+gem 'vcr'
+gem 'webmock'

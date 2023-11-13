@@ -1,0 +1,15 @@
+AllCops:
+  TargetRubyVersion: 2.7.0
+  NewCops: enable
+
+Layout/LineLength:
+  Max: 140
+Metrics/ClassLength:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/HashSyntax:
+  Enabled: true
+  EnforcedShorthandSyntax: never

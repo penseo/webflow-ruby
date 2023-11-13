@@ -2,7 +2,7 @@ require 'http'
 
 module Webflow
   class Client
-    HOST = 'https://api.webflow.com/v2'
+    HOST = 'https://api.webflow.com/v2'.freeze
 
     def initialize(token = nil)
       @token = token || Webflow.config.api_token
@@ -34,7 +34,7 @@ module Webflow
     end
 
     def publish(site_id, custom_domains: nil)
-      custom_domains ||= domains(site_id).map { |domain| domain['name'] }
+      custom_domains ||= domains(site_id).map { |domain| domain[:name] }
       post("/sites/#{site_id}/publish", { publishToWebflowSubdomain: true, customDomains: custom_domains })
     end
 
@@ -63,10 +63,10 @@ module Webflow
       get("/collections/#{collection_id}/items", params: { limit: per_page, offset: per_page * (page - 1) })
     end
 
-    def items(collection_id, limit: 100)
+    def items(collection_id, limit: 100) # rubocop:disable Metrics/MethodLength
       fetched_items = []
       num_pages     = (limit.to_f / 100.0).ceil
-      per_page      = limit > 100 ? 100 : limit
+      per_page      = [limit, 100].min
 
       num_pages.times do |i|
         response = paginate_items(collection_id, per_page: per_page, page: i + 1)
@@ -95,7 +95,7 @@ module Webflow
       result
     end
 
-    def update_item(collection_id, item_id, data, is_archived: false, is_draft: false, publish: false)
+    def update_item(collection_id, item_id, data, is_archived: false, is_draft: false, publish: false) # rubocop:disable Metrics/ParameterLists
       result = patch("/collections/#{collection_id}/items/#{item_id}",
                      { isArchived: is_archived, isDraft: is_draft, fieldData: data }.compact)
       return result unless publish
@@ -142,14 +142,14 @@ module Webflow
     def request(path, method: :get, params: nil, data: nil)
       url = URI.parse(HOST + path)
       bearer = "Bearer #{@token}"
-      headers = { 'accept': 'application/json', 'content-type': 'application/json' }
+      headers = { accept: 'application/json', 'content-type': 'application/json' }
 
       response = HTTP.auth(bearer).headers(headers).request(method, url, params: params, json: data)
 
       track_rate_limit(response.headers)
 
       result = JSON.parse(response.body, symbolize_names: true) unless response.body.empty?
-      raise Webflow::Error, result[:message] if response.code >= 400
+      raise Webflow::Error, result if response.code >= 400
 
       result
     end
