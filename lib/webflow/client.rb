@@ -148,7 +148,7 @@ module Webflow
 
       track_rate_limit(response.headers)
 
-      result = JSON.parse(response.body) unless response.body.empty?
+      result = JSON.parse(response.body, symbolize_names: true) unless response.body.empty?
       raise Webflow::Error, result if response.code >= 400
 
       result
