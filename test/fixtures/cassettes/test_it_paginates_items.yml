@@ -1,0 +1,322 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"name":"Test 1"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:01:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '256'
+      Connection:
+      - close
+      Etag:
+      - W/"100-p8wbOAvWtQlpqnNtSvvF7tg4na0"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 751.962ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"65528eadb4467c711db60ce4","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:33.630Z","createdOn":"2023-11-13T21:01:33.630Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        1","slug":"test-1"}}'
+  recorded_at: Mon, 13 Nov 2023 21:01:30 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"name":"Test 2"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:01:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '256'
+      Connection:
+      - close
+      Etag:
+      - W/"100-/PnsYYBVVcFvfwvx3KmzF1yITmQ"
+      Retry-After:
+      - '59'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Response-Time:
+      - 3010.877ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"65528eb1b1fb406bfd734430","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:37.543Z","createdOn":"2023-11-13T21:01:37.543Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        2","slug":"test-2"}}'
+  recorded_at: Mon, 13 Nov 2023 21:01:34 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"name":"Test 3"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:01:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '256'
+      Connection:
+      - close
+      Etag:
+      - W/"100-LayfLsR8MLXFrxorYc3+0ijkx9I"
+      Retry-After:
+      - '55'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '57'
+      X-Response-Time:
+      - 268.741ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"65528eb26a676a3a54527743","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:38.851Z","createdOn":"2023-11-13T21:01:38.851Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        3","slug":"test-3"}}'
+  recorded_at: Mon, 13 Nov 2023 21:01:35 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"name":"Test 4"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:01:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '256'
+      Connection:
+      - close
+      Etag:
+      - W/"100-JBmuAPGWyup/ZlVFhu72VPch7mM"
+      Retry-After:
+      - '54'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '56'
+      X-Response-Time:
+      - 217.949ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"65528eb3b4467c711db6112a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:39.716Z","createdOn":"2023-11-13T21:01:39.716Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        4","slug":"test-4"}}'
+  recorded_at: Mon, 13 Nov 2023 21:01:36 GMT
+- request:
+    method: get
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items?limit=2&offset=0
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:01:40 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '571'
+      Connection:
+      - close
+      Etag:
+      - W/"23b-qOHSVa8xaPDhnSQZBaqVvPQ0Qi0"
+      Retry-After:
+      - '54'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '55'
+      X-Response-Time:
+      - 32.354ms
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"id":"65528eb3b4467c711db6112a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:39.716Z","createdOn":"2023-11-13T21:01:39.716Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        4","slug":"test-4"}},{"id":"65528eb26a676a3a54527743","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:38.851Z","createdOn":"2023-11-13T21:01:38.851Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        3","slug":"test-3"}}],"pagination":{"limit":2,"offset":0,"total":7}}'
+  recorded_at: Mon, 13 Nov 2023 21:01:36 GMT
+- request:
+    method: get
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items?limit=2&offset=2
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:03:54 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '571'
+      Connection:
+      - close
+      Etag:
+      - W/"23b-g3FnwlyVJ05Dxr6v22tFwijngbU"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 42.264ms
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"id":"65528eb1b1fb406bfd734430","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:37.543Z","createdOn":"2023-11-13T21:01:37.543Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        2","slug":"test-2"}},{"id":"65528eadb4467c711db60ce4","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:33.630Z","createdOn":"2023-11-13T21:01:33.630Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        1","slug":"test-1"}}],"pagination":{"limit":2,"offset":2,"total":7}}'
+  recorded_at: Mon, 13 Nov 2023 21:03:51 GMT
+- request:
+    method: get
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items?limit=3&offset=0
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:07:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '828'
+      Connection:
+      - close
+      Etag:
+      - W/"33c-zVaFgS9Zj3hOzLxWISCFsSxCzSQ"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 126.742ms
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"id":"65528eb3b4467c711db6112a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:39.716Z","createdOn":"2023-11-13T21:01:39.716Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        4","slug":"test-4"}},{"id":"65528eb26a676a3a54527743","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:38.851Z","createdOn":"2023-11-13T21:01:38.851Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        3","slug":"test-3"}},{"id":"65528eb1b1fb406bfd734430","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:37.543Z","createdOn":"2023-11-13T21:01:37.543Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        2","slug":"test-2"}}],"pagination":{"limit":3,"offset":0,"total":7}}'
+  recorded_at: Mon, 13 Nov 2023 21:07:45 GMT
+recorded_with: VCR 6.2.0

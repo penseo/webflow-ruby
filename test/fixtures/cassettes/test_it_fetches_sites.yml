@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.webflow.com/v2/sites
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 20:25:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '499'
+      Connection:
+      - close
+      Etag:
+      - W/"1f3-LjFwQ6Igh0k9ag2xQs8sheu1A7k"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 56.238ms
+    body:
+      encoding: UTF-8
+      string: '{"sites":[{"id":"655276a1c36e738ce983a307","workspaceId":"62a86f707955eb1a75d81328","displayName":"Webflow
+        API and Sync test site","shortName":"webflow-api-and-sync-test-site","previewUrl":"https://screenshots.webflow.com/sites/655276a1c36e738ce983a307/20231113192032_a67741d3c9f7940aee2919a09801071c.png","timeZone":"America/Buenos_Aires","createdOn":"2023-11-13T19:18:57.978Z","lastUpdated":"2023-11-13T19:20:42.532Z","lastPublished":"2023-11-13T19:20:32.850Z","customDomains":[],"locales":null}]}'
+  recorded_at: Mon, 13 Nov 2023 20:25:17 GMT
+recorded_with: VCR 6.2.0

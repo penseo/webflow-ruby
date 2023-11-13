@@ -22,7 +22,7 @@ module Webflow
     end
 
     def sites
-      get('/sites')
+      get('/sites').fetch(:sites)
     end
 
     def site(site_id)
@@ -30,7 +30,7 @@ module Webflow
     end
 
     def domains(site_id)
-      get("/sites/#{site_id}/custom_domains")
+      get("/sites/#{site_id}/custom_domains").fetch(:customDomains)
     end
 
     def publish(site_id, custom_domains: nil)
@@ -39,7 +39,7 @@ module Webflow
     end
 
     def collections(site_id)
-      get("/sites/#{site_id}/collections")
+      get("/sites/#{site_id}/collections").fetch(:collections)
     end
 
     def collection(collection_id)
@@ -70,7 +70,7 @@ module Webflow
 
       num_pages.times do |i|
         response = paginate_items(collection_id, per_page: per_page, page: i + 1)
-        items = response.fetch('items')
+        items = response.fetch(:items)
 
         if block_given?
           yield(items)
@@ -91,7 +91,7 @@ module Webflow
                     { isArchived: is_archived, isDraft: is_draft, fieldData: data })
       return result unless publish
 
-      publish_item(collection_id, result.fetch('id'))
+      publish_item(collection_id, result.fetch(:id))
       result
     end
 
@@ -114,7 +114,7 @@ module Webflow
     end
 
     def publish_item(collection_id, item_id)
-      publish_items(collection_id, Array.wrap(item_id))
+      publish_items(collection_id, Array(item_id))
     end
 
     def publish_items(collection_id, item_ids)

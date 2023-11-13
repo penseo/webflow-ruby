@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"_archived":false,"_draft":false,"name":"Test
+        Item Name ABC"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 20:36:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '280'
+      Connection:
+      - close
+      Etag:
+      - W/"118-ft5sFoIDzoe/KXYY+YlObn/HmBQ"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 226.026ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"655288d534817f4ab9378f59","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T20:36:37.673Z","createdOn":"2023-11-13T20:36:37.673Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name ABC","slug":"test-item-name-abc"}}'
+  recorded_at: Mon, 13 Nov 2023 20:36:34 GMT
+- request:
+    method: patch
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/655288d534817f4ab9378f59
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"name":"Test Item
+        Name Update DEF"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 20:39:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '287'
+      Connection:
+      - close
+      Etag:
+      - W/"11f-MxdVIsAqJRFDu+GGfUGtrEGj+F8"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 756.642ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"655288d534817f4ab9378f59","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T20:39:25.872Z","createdOn":"2023-11-13T20:36:37.673Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name Update DEF","slug":"test-item-name-abc"}}'
+  recorded_at: Mon, 13 Nov 2023 20:39:22 GMT
+recorded_with: VCR 6.2.0

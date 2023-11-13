@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"unknown":"this raises
+        an error"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 20:54:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '156'
+      Connection:
+      - close
+      Etag:
+      - W/"9c-qKnYPBdHpCPRxyGgwUzdygnEbaE"
+      Retry-After:
+      - '25'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '57'
+      X-Response-Time:
+      - 20.480ms
+    body:
+      encoding: UTF-8
+      string: '{"message":"Validation Error: [\"Value (fieldData) should have required
+        property ''name''\"]","code":"validation_error","externalReference":null,"details":[]}'
+  recorded_at: Mon, 13 Nov 2023 20:54:18 GMT
+recorded_with: VCR 6.2.0

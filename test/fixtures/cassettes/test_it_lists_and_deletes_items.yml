@@ -1,0 +1,406 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"name":"To delete
+        Test 1"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:10:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '276'
+      Connection:
+      - close
+      Etag:
+      - W/"114-83HZ7VSN1fyGQ5LlgxsxwNX2rF4"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 248.400ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"655290c2cf60d9e67056e9fc","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:10:26.927Z","createdOn":"2023-11-13T21:10:26.927Z","isArchived":false,"isDraft":false,"fieldData":{"name":"To
+        delete Test 1","slug":"to-delete-test-1"}}'
+  recorded_at: Mon, 13 Nov 2023 21:10:23 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":false,"isDraft":false,"fieldData":{"name":"To delete
+        Test 2"}}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:10:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '276'
+      Connection:
+      - close
+      Etag:
+      - W/"114-gdHszFEqq814YgNsQopAq1Qx57E"
+      Retry-After:
+      - '59'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Response-Time:
+      - 363.843ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"655290c4c4dcc4d9338b5a1c","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:10:28.054Z","createdOn":"2023-11-13T21:10:28.054Z","isArchived":false,"isDraft":false,"fieldData":{"name":"To
+        delete Test 2","slug":"to-delete-test-2"}}'
+  recorded_at: Mon, 13 Nov 2023 21:10:24 GMT
+- request:
+    method: get
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items?limit=100&offset=0
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:10:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2558'
+      Connection:
+      - close
+      Etag:
+      - W/"9fe-+HbE2/zK607X/X9UAKFItuLseCM"
+      Retry-After:
+      - '58'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '57'
+      X-Response-Time:
+      - 35.601ms
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"id":"655290c4c4dcc4d9338b5a1c","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:10:28.054Z","createdOn":"2023-11-13T21:10:28.054Z","isArchived":false,"isDraft":false,"fieldData":{"name":"To
+        delete Test 2","slug":"to-delete-test-2"}},{"id":"655290c2cf60d9e67056e9fc","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:10:26.927Z","createdOn":"2023-11-13T21:10:26.927Z","isArchived":false,"isDraft":false,"fieldData":{"name":"To
+        delete Test 1","slug":"to-delete-test-1"}},{"id":"65528eb3b4467c711db6112a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:39.716Z","createdOn":"2023-11-13T21:01:39.716Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        4","slug":"test-4"}},{"id":"65528eb26a676a3a54527743","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:38.851Z","createdOn":"2023-11-13T21:01:38.851Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        3","slug":"test-3"}},{"id":"65528eb1b1fb406bfd734430","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:37.543Z","createdOn":"2023-11-13T21:01:37.543Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        2","slug":"test-2"}},{"id":"65528eadb4467c711db60ce4","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:01:33.630Z","createdOn":"2023-11-13T21:01:33.630Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        1","slug":"test-1"}},{"id":"65528cd9adbbc05fc356d5a9","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T20:53:45.953Z","createdOn":"2023-11-13T20:53:45.953Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name ABC","slug":"test-item-name-abc-0bde6"}},{"id":"65528c766739085e2211c99a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-11-13T20:52:09.906Z","lastUpdated":"2023-11-13T20:52:09.906Z","createdOn":"2023-11-13T20:52:06.030Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name Update DEF LIVE","slug":"test-item-name-abc-live"}},{"id":"655288d534817f4ab9378f59","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-11-13T20:42:34.985Z","lastUpdated":"2023-11-13T20:39:25.872Z","createdOn":"2023-11-13T20:36:37.673Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name Update DEF","slug":"test-item-name-abc"}}],"pagination":{"limit":100,"offset":0,"total":9}}'
+  recorded_at: Mon, 13 Nov 2023 21:10:25 GMT
+- request:
+    method: patch
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/655290c4c4dcc4d9338b5a1c
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":true,"isDraft":false}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:25:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '275'
+      Connection:
+      - close
+      Etag:
+      - W/"113-0QseK2mVWs45R872LP6pxwbRe8k"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 187.258ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"655290c4c4dcc4d9338b5a1c","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:25:41.166Z","createdOn":"2023-11-13T21:10:28.054Z","isArchived":true,"isDraft":false,"fieldData":{"name":"To
+        delete Test 2","slug":"to-delete-test-2"}}'
+  recorded_at: Mon, 13 Nov 2023 21:25:37 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/publish
+    body:
+      encoding: ASCII-8BIT
+      string: '{"itemIds":["655290c4c4dcc4d9338b5a1c"]}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:25:43 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '61'
+      Connection:
+      - close
+      Etag:
+      - W/"3d-/WB+xIWAaBcGEZm0SgOJit7Skdw"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Response-Time:
+      - 1338.321ms
+    body:
+      encoding: UTF-8
+      string: '{"publishedItemIds":["655290c4c4dcc4d9338b5a1c"],"errors":[]}'
+  recorded_at: Mon, 13 Nov 2023 21:25:39 GMT
+- request:
+    method: delete
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/655290c4c4dcc4d9338b5a1c
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:25:44 GMT
+      Connection:
+      - close
+      Etag:
+      - W/"a-bAsFyilMr4Ra1hIU5PyoyFRunpI"
+      Retry-After:
+      - '58'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '57'
+      X-Response-Time:
+      - 473.313ms
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+  recorded_at: Mon, 13 Nov 2023 21:25:40 GMT
+- request:
+    method: patch
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/655290c2cf60d9e67056e9fc
+    body:
+      encoding: ASCII-8BIT
+      string: '{"isArchived":true,"isDraft":false}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:27:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '275'
+      Connection:
+      - close
+      Etag:
+      - W/"113-Qx0UVO3MqBUTPeHGolDgqrE+2Kc"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 146.743ms
+    body:
+      encoding: UTF-8
+      string: '{"id":"655290c2cf60d9e67056e9fc","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T21:27:44.030Z","createdOn":"2023-11-13T21:10:26.927Z","isArchived":true,"isDraft":false,"fieldData":{"name":"To
+        delete Test 1","slug":"to-delete-test-1"}}'
+  recorded_at: Mon, 13 Nov 2023 21:27:40 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/publish
+    body:
+      encoding: ASCII-8BIT
+      string: '{"itemIds":["655290c2cf60d9e67056e9fc"]}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:27:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '61'
+      Connection:
+      - close
+      Etag:
+      - W/"3d-tRtbqx4reKz0l/9I8wgT4K2PPog"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '58'
+      X-Response-Time:
+      - 428.592ms
+    body:
+      encoding: UTF-8
+      string: '{"publishedItemIds":["655290c2cf60d9e67056e9fc"],"errors":[]}'
+  recorded_at: Mon, 13 Nov 2023 21:27:41 GMT
+- request:
+    method: delete
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/655290c2cf60d9e67056e9fc
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 21:27:46 GMT
+      Connection:
+      - close
+      Etag:
+      - W/"a-bAsFyilMr4Ra1hIU5PyoyFRunpI"
+      Retry-After:
+      - '59'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '57'
+      X-Response-Time:
+      - 481.723ms
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+  recorded_at: Mon, 13 Nov 2023 21:27:42 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.webflow.com/v2/sites/655276a1c36e738ce983a307/collections
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 20:35:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '374'
+      Connection:
+      - close
+      Etag:
+      - W/"176-1Yc6YkUGd+F0NyYRwpbaLu6roCQ"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 565.762ms
+    body:
+      encoding: UTF-8
+      string: '{"collections":[{"id":"655276efe9424bcefd3231a2","displayName":"Articles","singularName":"Article","slug":"article","createdOn":"2023-11-13T19:20:15.757Z","lastUpdated":"2023-11-13T19:20:15.981Z"},{"id":"655276fb4b26c186e23ac851","displayName":"Stories","singularName":"Story","slug":"story","createdOn":"2023-11-13T19:20:27.389Z","lastUpdated":"2023-11-13T19:20:27.585Z"}]}'
+  recorded_at: Mon, 13 Nov 2023 20:34:57 GMT
+recorded_with: VCR 6.2.0

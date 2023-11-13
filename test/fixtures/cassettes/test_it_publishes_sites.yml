@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.webflow.com/v2/sites/655276a1c36e738ce983a307/custom_domains
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 20:26:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '20'
+      Connection:
+      - close
+      Etag:
+      - W/"14-/wEeeF98vrgVTTKbvtSnoD+QbkU"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 373.666ms
+    body:
+      encoding: UTF-8
+      string: '{"customDomains":[]}'
+  recorded_at: Mon, 13 Nov 2023 20:26:33 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/sites/655276a1c36e738ce983a307/publish
+    body:
+      encoding: ASCII-8BIT
+      string: '{"publishToWebflowSubdomain":true,"customDomains":[]}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Mon, 13 Nov 2023 20:32:22 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '53'
+      Connection:
+      - close
+      Etag:
+      - W/"35-OtMhhOHaNJI34VHb0VihhnK/yNY"
+      X-Ratelimit-Limit:
+      - '1'
+      X-Ratelimit-Remaining:
+      - '0'
+      X-Ratelimit-Reset:
+      - '1699907603'
+      X-Response-Time:
+      - 97.898ms
+    body:
+      encoding: UTF-8
+      string: '{"customDomains":[],"publishToWebflowSubdomain":true}'
+  recorded_at: Mon, 13 Nov 2023 20:32:18 GMT
+recorded_with: VCR 6.2.0
