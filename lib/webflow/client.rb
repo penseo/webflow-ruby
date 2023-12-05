@@ -1,24 +1,13 @@
-require 'http'
+require 'net/http'
+require 'json'
 
 module Webflow
   class Client
     HOST = 'https://api.webflow.com/v2'.freeze
+    PAGINATION_LIMIT = 100
 
-    def initialize(token = nil)
-      @token = token || Webflow.config.api_token
-      @rate_limit = {}
-    end
-
-    def rate_limit
-      @rate_limit || {}
-    end
-
-    def limit
-      rate_limit['X-Ratelimit-Limit'].to_i
-    end
-
-    def remaining
-      rate_limit['X-Ratelimit-Remaining'].to_i
+    def initialize(token = Webflow.config.api_token)
+      @token = token
     end
 
     def sites
@@ -29,12 +18,8 @@ module Webflow
       get("/sites/#{site_id}")
     end
 
-    def domains(site_id)
-      get("/sites/#{site_id}/custom_domains").fetch(:customDomains)
-    end
-
-    def publish(site_id, custom_domains: nil)
-      custom_domains ||= domains(site_id).map { |domain| domain[:name] }
+    def publish(site_id)
+      custom_domains = site(site_id).fetch(:customDomains).map { |domain| domain[:id] }
       post("/sites/#{site_id}/publish", { publishToWebflowSubdomain: true, customDomains: custom_domains })
     end
 
@@ -46,8 +31,7 @@ module Webflow
       get("/collections/#{collection_id}")
     end
 
-    # https://developers.webflow.com/?javascript#get-all-items-for-a-collection
-    # returns json object with data to help paginate collection
+    # https://developers.webflow.com/reference/list-collection-items
     #
     # {
     #   items: [] your list of items returned,
@@ -57,49 +41,44 @@ module Webflow
     #     total:  total # of items in the collection
     #   }
     # }
-    #
-    # page starts at 1
-    def paginate_items(collection_id, per_page: 100, page: 1)
-      get("/collections/#{collection_id}/items", params: { limit: per_page, offset: per_page * (page - 1) })
+    def list_items(collection_id, limit: PAGINATION_LIMIT, offset: 0)
+      limit = [limit, PAGINATION_LIMIT].min
+      get("/collections/#{collection_id}/items", { limit: limit, offset: offset }).fetch(:items)
     end
 
-    def items(collection_id, limit: 100) # rubocop:disable Metrics/MethodLength
+    def list_all_items(collection_id) # rubocop:disable Metrics/MethodLength
       fetched_items = []
-      num_pages     = (limit.to_f / 100.0).ceil
-      per_page      = [limit, 100].min
+      offset = 0
 
-      num_pages.times do |i|
-        response = paginate_items(collection_id, per_page: per_page, page: i + 1)
+      loop do
+        response = get("/collections/#{collection_id}/items", { limit: PAGINATION_LIMIT, offset: offset })
         items = response.fetch(:items)
 
         if block_given?
           yield(items)
         else
-          fetched_items += items
+          fetched_items.concat(items)
         end
+
+        offset += PAGINATION_LIMIT
+        break if offset >= response.dig(:pagination, :total)
       end
 
       fetched_items
     end
 
-    def item(collection_id, item_id)
+    def get_item(collection_id, item_id)
       get("/collections/#{collection_id}/items/#{item_id}")
     end
 
-    def create_item(collection_id, data, is_archived: false, is_draft: false, publish: false)
-      result = post("/collections/#{collection_id}/items",
-                    { isArchived: is_archived, isDraft: is_draft, fieldData: data })
-      return result unless publish
-
+    def create_item(collection_id, data)
+      result = post("/collections/#{collection_id}/items", { isArchived: false, isDraft: false, fieldData: data })
       publish_item(collection_id, result.fetch(:id))
       result
     end
 
-    def update_item(collection_id, item_id, data, is_archived: false, is_draft: false, publish: false) # rubocop:disable Metrics/ParameterLists
-      result = patch("/collections/#{collection_id}/items/#{item_id}",
-                     { isArchived: is_archived, isDraft: is_draft, fieldData: data }.compact)
-      return result unless publish
-
+    def update_item(collection_id, item_id, data)
+      result = patch("/collections/#{collection_id}/items/#{item_id}", { isArchived: false, isDraft: false, fieldData: data }.compact)
       publish_item(collection_id, item_id)
       result
     end
@@ -109,22 +88,19 @@ module Webflow
       # if we delete without archiving, the item will stay visible on the site until the site is published
       # if we first archive + publish item, the item will be set as archived and not visible on the site
       # then we call delete to remove the item from Webflow CMS
-      update_item(collection_id, item_id, nil, is_archived: true, publish: true)
+      patch("/collections/#{collection_id}/items/#{item_id}", { isArchived: true, isDraft: false })
+      publish_item(collection_id, item_id)
       delete("/collections/#{collection_id}/items/#{item_id}")
-    end
-
-    def publish_item(collection_id, item_id)
-      publish_items(collection_id, Array(item_id))
-    end
-
-    def publish_items(collection_id, item_ids)
-      post("/collections/#{collection_id}/items/publish", { itemIds: item_ids })
     end
 
     private
 
-    def get(path, params: nil)
-      request(path, method: :get, params: params)
+    def publish_item(collection_id, item_id)
+      post("/collections/#{collection_id}/items/publish", { itemIds: Array(item_id) })
+    end
+
+    def get(path, data = nil)
+      request(path, method: :get, data: data)
     end
 
     def post(path, data)
@@ -139,24 +115,26 @@ module Webflow
       request(path, method: :delete)
     end
 
-    def request(path, method: :get, params: nil, data: nil)
+    def request(path, method:, data: nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       url = URI.parse(HOST + path)
       bearer = "Bearer #{@token}"
-      headers = { accept: 'application/json', 'content-type': 'application/json' }
+      headers = { accept: 'application/json', 'content-type': 'application/json', authorization: bearer }
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl = true if url.scheme == 'https'
 
-      response = HTTP.auth(bearer).headers(headers).request(method, url, params: params, json: data)
+      url.query = URI.encode_www_form(data) if data && method == :get
 
-      track_rate_limit(response.headers)
+      request_class = { get: Net::HTTP::Get, post: Net::HTTP::Post, patch: Net::HTTP::Patch, delete: Net::HTTP::Delete }.fetch(method)
+      request = request_class.new(url.to_s, headers)
+      request.body = data.to_json if %i[post patch].include?(method)
 
-      result = JSON.parse(response.body, symbolize_names: true) unless response.body.empty?
-      raise Webflow::Error, result if response.code >= 400
+      response = http.request(request)
+      body = response.read_body
+
+      result = JSON.parse(body, symbolize_names: true) unless body.nil?
+      raise Webflow::Error, result if response.code.to_i >= 400
 
       result
-    end
-
-    def track_rate_limit(headers)
-      rate_limit = headers.select { |key, _value| key =~ /X-Ratelimit/ }.to_h
-      @rate_limit = rate_limit unless rate_limit.empty?
     end
   end
 end

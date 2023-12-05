@@ -15,6 +15,8 @@ http_interactions:
       - application/json
       Connection:
       - close
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/5.1.1
   response:
@@ -23,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 13 Nov 2023 20:35:01 GMT
+      - Tue, 05 Dec 2023 16:31:03 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -39,9 +41,9 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '59'
       X-Response-Time:
-      - 565.762ms
+      - 69.426ms
     body:
       encoding: UTF-8
       string: '{"collections":[{"id":"655276efe9424bcefd3231a2","displayName":"Articles","singularName":"Article","slug":"article","createdOn":"2023-11-13T19:20:15.757Z","lastUpdated":"2023-11-13T19:20:15.981Z"},{"id":"655276fb4b26c186e23ac851","displayName":"Stories","singularName":"Story","slug":"story","createdOn":"2023-11-13T19:20:27.389Z","lastUpdated":"2023-11-13T19:20:27.585Z"}]}'
-  recorded_at: Mon, 13 Nov 2023 20:34:57 GMT
+  recorded_at: Tue, 05 Dec 2023 16:31:03 GMT
 recorded_with: VCR 6.2.0

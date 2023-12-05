@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items?limit=100&offset=0
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 05 Dec 2023 17:06:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '5346'
+      Connection:
+      - close
+      Etag:
+      - W/"14e2-OKZPJFHNJwvJQz2WcbB1D2Y6RWM"
+      Retry-After:
+      - '60'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '59'
+      X-Response-Time:
+      - 35.322ms
+    body:
+      encoding: UTF-8
+      string: '{"items":[{"id":"656f507cf7f45102c817f86a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T17:06:26.083Z","lastUpdated":"2023-12-05T16:31:56.997Z","createdOn":"2023-12-05T16:31:56.113Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name ABC","slug":"test-item-name-abc-1c78a"}},{"id":"656f505bd83bd52fe7d56688","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:31:29.460Z","createdOn":"2023-12-05T16:31:23.936Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name Update DEF LIVE","slug":"test-item-name-abc-live-d2192"}},{"id":"656f50556fbd03baed77208e","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:31:21.464Z","createdOn":"2023-12-05T16:31:17.859Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name Update DEF","slug":"test-item-name-abc-df1d4"}},{"id":"656f50509583cb3bf2d4cd39","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:31:13.743Z","createdOn":"2023-12-05T16:31:12.763Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        4","slug":"test-4-e35c6"}},{"id":"656f504e6643aa94d9143925","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:31:11.707Z","createdOn":"2023-12-05T16:31:10.575Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        3","slug":"test-3-ec739"}},{"id":"656f504a73c0f62eca242006","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:31:08.060Z","createdOn":"2023-12-05T16:31:06.627Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        2","slug":"test-2-2de0d"}},{"id":"656f50481d68c2857ff34139","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:31:05.599Z","createdOn":"2023-12-05T16:31:04.673Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        1","slug":"test-1-c8416"}},{"id":"656f4fdfe163fd9aeaae1ca9","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:29:20.959Z","createdOn":"2023-12-05T16:29:19.507Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        4","slug":"test-4-b3f68"}},{"id":"656f4fdcdbd0fab0def9c5ab","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:29:17.722Z","createdOn":"2023-12-05T16:29:16.500Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        3","slug":"test-3-ce136"}},{"id":"656f4fd9b95232269428b73a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:29:15.327Z","createdOn":"2023-12-05T16:29:13.791Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        2","slug":"test-2-9eb18"}},{"id":"656f4fd7bb664de9c7fabb78","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:29:12.507Z","createdOn":"2023-12-05T16:29:11.371Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        1","slug":"test-1-b4a47"}},{"id":"65528eb3b4467c711db6112a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:27:52.480Z","createdOn":"2023-11-13T21:01:39.716Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        4","slug":"test-4"}},{"id":"65528eb26a676a3a54527743","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:27:51.458Z","createdOn":"2023-11-13T21:01:38.851Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        3","slug":"test-3"}},{"id":"65528eb1b1fb406bfd734430","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:27:50.475Z","createdOn":"2023-11-13T21:01:37.543Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        2","slug":"test-2"}},{"id":"65528eadb4467c711db60ce4","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:27:49.481Z","createdOn":"2023-11-13T21:01:33.630Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        1","slug":"test-1"}},{"id":"65528cd9adbbc05fc356d5a9","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-12-05T16:26:51.522Z","createdOn":"2023-11-13T20:53:45.953Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name ABC","slug":"test-item-name-abc-0bde6"}},{"id":"65528c766739085e2211c99a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:32.385Z","lastUpdated":"2023-11-13T20:52:09.906Z","createdOn":"2023-11-13T20:52:06.030Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name Update DEF LIVE","slug":"test-item-name-abc-live"}},{"id":"655288d534817f4ab9378f59","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:27:54.768Z","lastUpdated":"2023-12-05T16:27:54.768Z","createdOn":"2023-11-13T20:36:37.673Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name Update DEF","slug":"test-item-name-abc"}}],"pagination":{"limit":100,"offset":0,"total":18}}'
+  recorded_at: Tue, 05 Dec 2023 17:06:39 GMT
+recorded_with: VCR 6.2.0

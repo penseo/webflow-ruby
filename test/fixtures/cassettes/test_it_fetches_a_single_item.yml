@@ -16,6 +16,8 @@ http_interactions:
       - application/json
       Connection:
       - close
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/5.1.1
   response:
@@ -24,7 +26,7 @@ http_interactions:
       message: Accepted
     headers:
       Date:
-      - Mon, 13 Nov 2023 20:53:46 GMT
+      - Tue, 05 Dec 2023 16:31:56 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -32,23 +34,69 @@ http_interactions:
       Connection:
       - close
       Etag:
-      - W/"11e-c3f+McQk9wj8Bvfbz8FhUz/+/No"
+      - W/"11e-PkNzdwlaL8WJ0jkH2I/7v3ikKRo"
       Retry-After:
-      - '60'
+      - '8'
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '59'
+      - '22'
       X-Response-Time:
-      - 767.498ms
+      - 246.735ms
     body:
       encoding: UTF-8
-      string: '{"id":"65528cd9adbbc05fc356d5a9","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T20:53:45.953Z","createdOn":"2023-11-13T20:53:45.953Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
-        Item Name ABC","slug":"test-item-name-abc-0bde6"}}'
-  recorded_at: Mon, 13 Nov 2023 20:53:42 GMT
+      string: '{"id":"656f507cf7f45102c817f86a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-12-05T16:31:56.113Z","createdOn":"2023-12-05T16:31:56.113Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name ABC","slug":"test-item-name-abc-1c78a"}}'
+  recorded_at: Tue, 05 Dec 2023 16:31:55 GMT
+- request:
+    method: post
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/publish
+    body:
+      encoding: ASCII-8BIT
+      string: '{"itemIds":["656f507cf7f45102c817f86a"]}'
+    headers:
+      Authorization:
+      - Bearer <TEST_API_TOKEN>
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - api.webflow.com
+      User-Agent:
+      - http.rb/5.1.1
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Date:
+      - Tue, 05 Dec 2023 16:31:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '61'
+      Connection:
+      - close
+      Etag:
+      - W/"3d-c6pS2XZ4kabPvJLI1Bzx27fnH7U"
+      Retry-After:
+      - '7'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '21'
+      X-Response-Time:
+      - 346.824ms
+    body:
+      encoding: UTF-8
+      string: '{"publishedItemIds":["656f507cf7f45102c817f86a"],"errors":[]}'
+  recorded_at: Tue, 05 Dec 2023 16:31:56 GMT
 - request:
     method: get
-    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/65528cd9adbbc05fc356d5a9
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/656f507cf7f45102c817f86a
     body:
       encoding: ASCII-8BIT
       string: ''
@@ -61,6 +109,8 @@ http_interactions:
       - application/json
       Connection:
       - close
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/5.1.1
   response:
@@ -69,26 +119,26 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 13 Nov 2023 20:53:47 GMT
+      - Tue, 05 Dec 2023 16:31:57 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '286'
+      - '308'
       Connection:
       - close
       Etag:
-      - W/"11e-c3f+McQk9wj8Bvfbz8FhUz/+/No"
+      - W/"134-a15dxfdFuSfEQ+YrC0G1AsC9c7w"
       Retry-After:
-      - '59'
+      - '6'
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '58'
+      - '20'
       X-Response-Time:
-      - 33.815ms
+      - 43.344ms
     body:
       encoding: UTF-8
-      string: '{"id":"65528cd9adbbc05fc356d5a9","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T20:53:45.953Z","createdOn":"2023-11-13T20:53:45.953Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
-        Item Name ABC","slug":"test-item-name-abc-0bde6"}}'
-  recorded_at: Mon, 13 Nov 2023 20:53:43 GMT
+      string: '{"id":"656f507cf7f45102c817f86a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:56.997Z","lastUpdated":"2023-12-05T16:31:56.997Z","createdOn":"2023-12-05T16:31:56.113Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name ABC","slug":"test-item-name-abc-1c78a"}}'
+  recorded_at: Tue, 05 Dec 2023 16:31:57 GMT
 recorded_with: VCR 6.2.0

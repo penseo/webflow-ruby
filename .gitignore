@@ -9,3 +9,5 @@
 *.gem
 *.swo
 *.swp
+
+.irb_history

@@ -15,6 +15,8 @@ http_interactions:
       - application/json
       Connection:
       - close
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/5.1.1
   response:
@@ -23,7 +25,7 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Mon, 13 Nov 2023 20:56:25 GMT
+      - Tue, 05 Dec 2023 16:31:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -33,16 +35,16 @@ http_interactions:
       Etag:
       - W/"b8-Ep/mmdZnWXLKW/fDZmhsVAm6yQM"
       Retry-After:
-      - '60'
+      - '32'
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '59'
+      - '36'
       X-Response-Time:
-      - 74.074ms
+      - 76.009ms
     body:
       encoding: UTF-8
       string: '{"message":"Validation Error","code":"validation_error","externalReference":null,"details":[{"param":"field_with_validation","description":"Field
         not described in schema: undefined"}]}'
-  recorded_at: Mon, 13 Nov 2023 20:56:22 GMT
+  recorded_at: Tue, 05 Dec 2023 16:31:32 GMT
 recorded_with: VCR 6.2.0

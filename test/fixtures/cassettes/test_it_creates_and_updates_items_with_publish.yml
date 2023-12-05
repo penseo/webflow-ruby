@@ -16,6 +16,8 @@ http_interactions:
       - application/json
       Connection:
       - close
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/5.1.1
   response:
@@ -24,34 +26,34 @@ http_interactions:
       message: Accepted
     headers:
       Date:
-      - Mon, 13 Nov 2023 20:52:06 GMT
+      - Tue, 05 Dec 2023 16:31:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '290'
+      - '296'
       Connection:
       - close
       Etag:
-      - W/"122-x8ai56kgJbB8aN8y0C5GHTRlXMo"
+      - W/"128-1IkbKqq1pvsEflEppMZJcR62U/E"
       Retry-After:
-      - '60'
+      - '40'
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '59'
+      - '42'
       X-Response-Time:
-      - 793.169ms
+      - 272.640ms
     body:
       encoding: UTF-8
-      string: '{"id":"65528c766739085e2211c99a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-11-13T20:52:06.030Z","createdOn":"2023-11-13T20:52:06.030Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
-        Item Name ABC LIVE","slug":"test-item-name-abc-live"}}'
-  recorded_at: Mon, 13 Nov 2023 20:52:02 GMT
+      string: '{"id":"656f505bd83bd52fe7d56688","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":null,"lastUpdated":"2023-12-05T16:31:23.936Z","createdOn":"2023-12-05T16:31:23.936Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name ABC LIVE","slug":"test-item-name-abc-live-d2192"}}'
+  recorded_at: Tue, 05 Dec 2023 16:31:23 GMT
 - request:
     method: post
     uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/publish
     body:
       encoding: ASCII-8BIT
-      string: '{"itemIds":["65528c766739085e2211c99a"]}'
+      string: '{"itemIds":["656f505bd83bd52fe7d56688"]}'
     headers:
       Authorization:
       - Bearer <TEST_API_TOKEN>
@@ -61,6 +63,8 @@ http_interactions:
       - application/json
       Connection:
       - close
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/5.1.1
   response:
@@ -69,7 +73,7 @@ http_interactions:
       message: Accepted
     headers:
       Date:
-      - Mon, 13 Nov 2023 20:52:08 GMT
+      - Tue, 05 Dec 2023 16:31:27 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -77,22 +81,22 @@ http_interactions:
       Connection:
       - close
       Etag:
-      - W/"3d-RwpInfMnAHUN1ar7/pqnKTTqDZE"
+      - W/"3d-B2tqWXUkmtHJOr2AU85cWtPKHAY"
       Retry-After:
-      - '59'
+      - '39'
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '58'
+      - '41'
       X-Response-Time:
-      - 1266.181ms
+      - 2804.002ms
     body:
       encoding: UTF-8
-      string: '{"publishedItemIds":["65528c766739085e2211c99a"],"errors":[]}'
-  recorded_at: Mon, 13 Nov 2023 20:52:04 GMT
+      string: '{"publishedItemIds":["656f505bd83bd52fe7d56688"],"errors":[]}'
+  recorded_at: Tue, 05 Dec 2023 16:31:27 GMT
 - request:
     method: patch
-    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/65528c766739085e2211c99a
+    uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/656f505bd83bd52fe7d56688
     body:
       encoding: ASCII-8BIT
       string: '{"isArchived":false,"isDraft":false,"fieldData":{"name":"Test Item
@@ -106,6 +110,8 @@ http_interactions:
       - application/json
       Connection:
       - close
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/5.1.1
   response:
@@ -114,34 +120,34 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 13 Nov 2023 20:52:09 GMT
+      - Tue, 05 Dec 2023 16:31:28 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '319'
+      - '325'
       Connection:
       - close
       Etag:
-      - W/"13f-lqk5fEFCiXvbF+DRwSlYRnBIQao"
+      - W/"145-E/baJwjgsofC2JJvOdncstyF6YU"
       Retry-After:
-      - '57'
+      - '36'
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '57'
+      - '40'
       X-Response-Time:
-      - 322.919ms
+      - 137.147ms
     body:
       encoding: UTF-8
-      string: '{"id":"65528c766739085e2211c99a","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-11-13T20:52:08.002Z","lastUpdated":"2023-11-13T20:52:08.946Z","createdOn":"2023-11-13T20:52:06.030Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
-        Item Name Update DEF LIVE","slug":"test-item-name-abc-live"}}'
-  recorded_at: Mon, 13 Nov 2023 20:52:05 GMT
+      string: '{"id":"656f505bd83bd52fe7d56688","cmsLocaleId":"655276ef2d7dfc2d8eef35a0","lastPublished":"2023-12-05T16:31:25.604Z","lastUpdated":"2023-12-05T16:31:28.628Z","createdOn":"2023-12-05T16:31:23.936Z","isArchived":false,"isDraft":false,"fieldData":{"name":"Test
+        Item Name Update DEF LIVE","slug":"test-item-name-abc-live-d2192"}}'
+  recorded_at: Tue, 05 Dec 2023 16:31:28 GMT
 - request:
     method: post
     uri: https://api.webflow.com/v2/collections/655276efe9424bcefd3231a2/items/publish
     body:
       encoding: ASCII-8BIT
-      string: '{"itemIds":["65528c766739085e2211c99a"]}'
+      string: '{"itemIds":["656f505bd83bd52fe7d56688"]}'
     headers:
       Authorization:
       - Bearer <TEST_API_TOKEN>
@@ -151,6 +157,8 @@ http_interactions:
       - application/json
       Connection:
       - close
+      Host:
+      - api.webflow.com
       User-Agent:
       - http.rb/5.1.1
   response:
@@ -159,7 +167,7 @@ http_interactions:
       message: Accepted
     headers:
       Date:
-      - Mon, 13 Nov 2023 20:52:10 GMT
+      - Tue, 05 Dec 2023 16:31:29 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -167,17 +175,17 @@ http_interactions:
       Connection:
       - close
       Etag:
-      - W/"3d-RwpInfMnAHUN1ar7/pqnKTTqDZE"
+      - W/"3d-B2tqWXUkmtHJOr2AU85cWtPKHAY"
       Retry-After:
-      - '56'
+      - '35'
       X-Ratelimit-Limit:
       - '60'
       X-Ratelimit-Remaining:
-      - '56'
+      - '39'
       X-Response-Time:
-      - 203.424ms
+      - 310.129ms
     body:
       encoding: UTF-8
-      string: '{"publishedItemIds":["65528c766739085e2211c99a"],"errors":[]}'
-  recorded_at: Mon, 13 Nov 2023 20:52:06 GMT
+      string: '{"publishedItemIds":["656f505bd83bd52fe7d56688"],"errors":[]}'
+  recorded_at: Tue, 05 Dec 2023 16:31:29 GMT
 recorded_with: VCR 6.2.0

@@ -1,43 +1,66 @@
-# Webflow [![Build Status](https://github.com/penseo/webflow-ruby/workflows/build/badge.svg)](https://github.com/penseo/webflow-ruby/actions)
+# Webflow [![Build Status](https://github.com/vfonic/webflow-rb/workflows/build/badge.svg)](https://github.com/vfonic/webflow-rb/actions)
 
 ## Installation
+
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'webflow-ruby'
+gem 'webflow-rb'
 ```
 
 And then execute:
 
 ```bash
-$ bundle
+bundle
 ```
 
 Or install it yourself as:
 
 ```bash
-$ gem install webflow-ruby
+gem install webflow-rb
 ```
 
 ## Usage
-Have a look at the tests, seriously!
 
-### Quick Start
+Check out [lib/webflow/client.rb](lib/webflow/client.rb).
+
+Check the documentation at: https://developers.webflow.com/reference/list-collection-items
+
+Basic usage:
+
 ```ruby
-client = Webflow::Client.new(WEBFLOW_API_TOKEN)
+client = Webflow::Client.new(ENV.fetch('WEBFLOW_API_TOKEN'))
 sites = client.sites
 ```
 
-## Todo
-* Resource mapping, it's plain hashes for now
-* Proper docs (please look at the tests for now)
+Here are method signatures:
+
+```ruby
+def sites
+def site(site_id)
+def publish(site_id)
+def collections(site_id)
+def collection(collection_id)
+def list_items(collection_id, limit: 100, offset: 0)
+def list_all_items(collection_id)
+def get_item(collection_id, item_id)
+def create_item(collection_id, data)
+def update_item(collection_id, item_id, data)
+def delete_item(collection_id, item_id)
+```
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at https://github.com/penseo/webflow-ruby. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+Bug reports and pull requests are welcome!
 
 ## Plugins
-* [webflow_sync](https://github.com/vfonic/webflow_sync) - Keep Rails models in sync with WebFlow collections.
 
+- [webflow_sync](https://github.com/vfonic/webflow_sync) - Keep Rails models in sync with WebFlow collections.
+
+## Thanks and Credits
+
+This gem wouldn't be possible without the amazing work of [webflow-ruby](https://github.com/penseo/webflow-ruby) gem. Thank you, [@phoet](https://github.com/phoet) and [@sega](https://github.com/sega)!
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

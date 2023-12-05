@@ -25,7 +25,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 05 Dec 2023 16:52:01 GMT
+      - Tue, 05 Dec 2023 16:42:02 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -41,56 +41,10 @@ http_interactions:
       X-Ratelimit-Remaining:
       - '59'
       X-Response-Time:
-      - 107.309ms
+      - 447.212ms
     body:
       encoding: UTF-8
       string: '{"id":"655276a1c36e738ce983a307","workspaceId":"62a86f707955eb1a75d81328","displayName":"Webflow
         API and Sync test site","shortName":"webflow-api-and-sync-test-site","previewUrl":"https://screenshots.webflow.com/sites/655276a1c36e738ce983a307/20231205163133_35e6ac0b670dfaf197fb33fd1b4d2a14.png","timeZone":"America/Buenos_Aires","createdOn":"2023-11-13T19:18:57.978Z","lastUpdated":"2023-12-05T16:31:44.728Z","lastPublished":"2023-12-05T16:31:32.979Z","customDomains":[],"locales":null}'
-  recorded_at: Tue, 05 Dec 2023 16:52:01 GMT
-- request:
-    method: post
-    uri: https://api.webflow.com/v2/sites/655276a1c36e738ce983a307/publish
-    body:
-      encoding: ASCII-8BIT
-      string: '{"publishToWebflowSubdomain":true,"customDomains":[]}'
-    headers:
-      Authorization:
-      - Bearer <TEST_API_TOKEN>
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-      Connection:
-      - close
-      Host:
-      - api.webflow.com
-      User-Agent:
-      - http.rb/5.1.1
-  response:
-    status:
-      code: 202
-      message: Accepted
-    headers:
-      Date:
-      - Tue, 05 Dec 2023 16:31:31 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '53'
-      Connection:
-      - close
-      Etag:
-      - W/"35-OtMhhOHaNJI34VHb0VihhnK/yNY"
-      X-Ratelimit-Limit:
-      - '1'
-      X-Ratelimit-Remaining:
-      - '0'
-      X-Ratelimit-Reset:
-      - '1701793952'
-      X-Response-Time:
-      - 104.708ms
-    body:
-      encoding: UTF-8
-      string: '{"customDomains":[],"publishToWebflowSubdomain":true}'
-  recorded_at: Tue, 05 Dec 2023 16:31:31 GMT
+  recorded_at: Tue, 05 Dec 2023 16:42:02 GMT
 recorded_with: VCR 6.2.0

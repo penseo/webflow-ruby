@@ -11,6 +11,12 @@ class WebflowTest < Minitest::Test
     end
   end
 
+  def test_it_fetches_a_single_site
+    VCR.use_cassette('test_it_fetches_a_single_site') do
+      assert_equal(SITE_ID, CLIENT.site(SITE_ID).fetch(:id))
+    end
+  end
+
   def test_it_publishes_sites
     VCR.use_cassette('test_it_publishes_sites') do
       assert_equal({ customDomains: [], publishToWebflowSubdomain: true }, CLIENT.publish(SITE_ID))
@@ -29,6 +35,52 @@ class WebflowTest < Minitest::Test
     end
   end
 
+  def test_it_paginates_items
+    VCR.use_cassette('test_it_paginates_items') do
+      names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
+      names.each do |name|
+        CLIENT.create_item(COLLECTION_ID, { name: name })
+      end
+
+      page_one = CLIENT.list_items(COLLECTION_ID, limit: 2, offset: 0)
+      page_two = CLIENT.list_items(COLLECTION_ID, limit: 2, offset: 2)
+
+      refute_equal(page_one, page_two)
+    end
+  end
+
+  def test_it_lists_all_items
+    VCR.use_cassette('test_it_lists_all_items') do
+      CLIENT.list_all_items(COLLECTION_ID) do |items|
+        assert_equal(18, items.length)
+      end
+    end
+  end
+
+  def test_it_yields_items_when_a_block_is_given
+    VCR.use_cassette('test_it_paginates_items') do
+      names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
+      names.each do |name|
+        CLIENT.create_item(COLLECTION_ID, { name: name })
+      end
+
+      limit = 3
+
+      CLIENT.list_items(COLLECTION_ID, limit: limit) do |items|
+        assert_equal(items.length, limit)
+      end
+    end
+  end
+
+  def test_it_fetches_a_single_item
+    VCR.use_cassette('test_it_fetches_a_single_item') do
+      data = { name: 'Test Item Name ABC' }
+      item = CLIENT.create_item(COLLECTION_ID, data)
+
+      assert_equal item.fetch(:id), CLIENT.get_item(COLLECTION_ID, item.fetch(:id)).fetch(:id)
+    end
+  end
+
   def test_it_creates_and_updates_items
     VCR.use_cassette('test_it_creates_and_updates_items') do
       name = 'Test Item Name ABC'
@@ -41,32 +93,6 @@ class WebflowTest < Minitest::Test
       item = CLIENT.update_item(COLLECTION_ID, item.fetch(:id), { name: name })
 
       assert_equal(name, item.dig(:fieldData, :name))
-    end
-  end
-
-  def test_it_creates_and_updates_items_with_publish
-    VCR.use_cassette('test_it_creates_and_updates_items_with_publish') do
-      name = 'Test Item Name ABC LIVE'
-      data = { name: name }
-
-      item = CLIENT.create_item(COLLECTION_ID, data, publish: true)
-
-      assert_equal(name, item.dig(:fieldData, :name))
-
-      name = 'Test Item Name Update DEF LIVE'
-
-      item = CLIENT.update_item(COLLECTION_ID, item.fetch(:id), { name: name }, publish: true)
-
-      assert_equal(name, item.dig(:fieldData, :name))
-    end
-  end
-
-  def test_it_fetches_a_single_item
-    VCR.use_cassette('test_it_fetches_a_single_item') do
-      data = { name: 'Test Item Name ABC' }
-      item = CLIENT.create_item(COLLECTION_ID, data)
-
-      assert_equal item.fetch(:id), CLIENT.item(COLLECTION_ID, item.fetch(:id)).fetch(:id)
     end
   end
 
@@ -103,45 +129,13 @@ class WebflowTest < Minitest::Test
     end
   end
 
-  def test_it_paginates_items # rubocop:disable Metrics/MethodLength
-    VCR.use_cassette('test_it_paginates_items') do
-      names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
-      names.each do |name|
-        CLIENT.create_item(COLLECTION_ID, { name: name })
-      end
-
-      page_one = CLIENT.paginate_items(COLLECTION_ID, per_page: 2, page: 1)
-
-      assert_equal(2, page_one.dig(:pagination, :limit))
-      page_two = CLIENT.paginate_items(COLLECTION_ID, per_page: 2, page: 2)
-
-      assert_equal(2, page_two.dig(:pagination, :limit))
-      refute_equal(page_one.fetch(:items), page_two.fetch(:items))
-    end
-  end
-
-  def test_it_yields_items_when_a_block_is_given
-    VCR.use_cassette('test_it_paginates_items') do
-      names = ['Test 1', 'Test 2', 'Test 3', 'Test 4']
-      names.each do |name|
-        CLIENT.create_item(COLLECTION_ID, { name: name })
-      end
-
-      limit = 3
-
-      CLIENT.items(COLLECTION_ID, limit: limit) do |items|
-        assert_equal(items.length, limit)
-      end
-    end
-  end
-
-  def test_it_lists_and_deletes_items # rubocop:disable Metrics/MethodLength
+  def test_it_deletes_items # rubocop:disable Metrics/MethodLength
     VCR.use_cassette('test_it_lists_and_deletes_items') do
       names = ['To delete Test 1', 'To delete Test 2']
       names.each do |name|
         CLIENT.create_item(COLLECTION_ID, { name: name })
       end
-      items = CLIENT.items(COLLECTION_ID)
+      items = CLIENT.list_items(COLLECTION_ID)
       items.each do |item|
         next unless item.dig(:fieldData, :name).start_with?('To delete')
 
@@ -149,34 +143,6 @@ class WebflowTest < Minitest::Test
 
         assert_nil(result)
       end
-    end
-  end
-
-  def test_it_tracks_rate_limits # rubocop:disable Metrics/MethodLength, Minitest/MultipleAssertions
-    VCR.use_cassette('test_it_tracks_rate_limits') do
-      CLIENT.collections(SITE_ID)
-      limit = { 'X-Ratelimit-Limit' => '60', 'X-Ratelimit-Remaining' => '59' }
-
-      assert_equal(limit, CLIENT.rate_limit)
-      assert_equal(60, CLIENT.limit)
-      assert_equal(59, CLIENT.remaining)
-
-      CLIENT.collections(SITE_ID)
-      limit = { 'X-Ratelimit-Limit' => '60', 'X-Ratelimit-Remaining' => '58' }
-
-      assert_equal(limit, CLIENT.rate_limit)
-      assert_equal(60, CLIENT.limit)
-      assert_equal(58, CLIENT.remaining)
-    end
-  end
-
-  def test_it_raises_rate_limit_error
-    VCR.use_cassette('test_it_raises_rate_limit_error') do
-      error = assert_raises Webflow::Error do
-        CLIENT.collections(SITE_ID)
-      end
-
-      assert_equal('Too Many Requests', error.message)
     end
   end
 end
